@@ -1,0 +1,149 @@
+CUDA: True
+[data] 18126 valid perturbed | 2107 unique clean msgs
+[plan] 1 models x 4 templates
+[model] loading meta-llama/Llama-3.2-3B-Instruct
+Traceback (most recent call last):
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/utils/hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1010, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1161, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1795, in _raise_on_head_call_error
+    raise head_call_error
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1682, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1604, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 787, in hf_raise_for_status
+    raise _format(GatedRepoError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.GatedRepoError: 401 Client Error. (Request ID: Root=1-6a4f3960-1c8915883b78d9046f9d8ed0;6dc78493-45d6-4f52-944a-3e3e8568be49)
+
+Cannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json.
+Access to model meta-llama/Llama-3.2-3B-Instruct is restricted. You must have access to it and be authenticated to access it. Please log in.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 694, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/models/auto/configuration_auto.py", line 374, in from_pretrained
+    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/configuration_utils.py", line 683, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/configuration_utils.py", line 738, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/utils/hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/utils/hub.py", line 488, in cached_files
+    raise OSError(
+OSError: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct.
+401 Client Error. (Request ID: Root=1-6a4f3960-1c8915883b78d9046f9d8ed0;6dc78493-45d6-4f52-944a-3e3e8568be49)
+
+Cannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json.
+Access to model meta-llama/Llama-3.2-3B-Instruct is restricted. You must have access to it and be authenticated to access it. Please log in.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/utils/hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1010, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1161, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1795, in _raise_on_head_call_error
+    raise head_call_error
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1682, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1604, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 787, in hf_raise_for_status
+    raise _format(GatedRepoError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.GatedRepoError: 401 Client Error. (Request ID: Root=1-6a4f3960-22123c0225ee599436fff7ec;c11bfeac-9d3a-4ff2-a2a4-f1098d40b75d)
+
+Cannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json.
+Access to model meta-llama/Llama-3.2-3B-Instruct is restricted. You must have access to it and be authenticated to access it. Please log in.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/run_inference.py", line 224, in <module>
+    main()
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/run_inference.py", line 187, in main
+    tok, model = load_model(mname, args.device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/run_inference.py", line 117, in load_model
+    tok = AutoTokenizer.from_pretrained(name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 698, in from_pretrained
+    config = PreTrainedConfig.from_pretrained(pretrained_model_name_or_path, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/configuration_utils.py", line 642, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/configuration_utils.py", line 683, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/configuration_utils.py", line 738, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/utils/hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/utils/hub.py", line 488, in cached_files
+    raise OSError(
+OSError: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct.
+401 Client Error. (Request ID: Root=1-6a4f3960-22123c0225ee599436fff7ec;c11bfeac-9d3a-4ff2-a2a4-f1098d40b75d)
+
+Cannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json.
+Access to model meta-llama/Llama-3.2-3B-Instruct is restricted. You must have access to it and be authenticated to access it. Please log in.

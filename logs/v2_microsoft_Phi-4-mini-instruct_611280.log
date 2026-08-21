@@ -1,0 +1,6 @@
+[data] 18126 valid perturbed | 2107 unique clean msgs
+[plan] 1 models x 4 templates
+[model] loading microsoft/Phi-4-mini-instruct
+[transformers] This model config has set a `rope_parameters['original_max_position_embeddings']` field, to be used together with `max_position_embeddings` to determine a scaling factor. Please set the `factor` field of `rope_parameters`with this ratio instead -- we recommend the use of this field over `original_max_position_embeddings`, as it is compatible with most model architectures.
+Loading weights:   0%|          | 0/194 [00:00<?, ?it/s]Loading weights:   1%|          | 1/194 [00:02<07:06,  2.21s/it]Loading weights:  51%|█████     | 99/194 [00:02<00:01, 59.69it/s]Loading weights:  79%|███████▉  | 153/194 [00:03<00:00, 59.68it/s]Loading weights:  95%|█████████▌| 185/194 [00:03<00:00, 57.45it/s]Loading weights: 100%|██████████| 194/194 [00:03<00:00, 49.70it/s]
+slurmstepd-gpunode008: error: *** JOB 611280 ON gpunode008 CANCELLED AT 2026-07-09T09:08:07 ***

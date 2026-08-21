@@ -1,0 +1,48 @@
+[data] 0 valid perturbed | 3 unique clean msgs
+[plan] 6 models x 4 templates | batch_size=16
+[model] loading Qwen/Qwen3.5-4B
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 73/426 [00:00<00:00, 722.10it/s]Loading weights:  34%|███▍      | 146/426 [00:00<00:00, 512.91it/s]Loading weights:  62%|██████▏   | 263/426 [00:00<00:00, 756.69it/s]Loading weights:  81%|████████▏ | 347/426 [00:00<00:00, 740.24it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 727.02it/s]
+[done] Qwen/Qwen3.5-4B / t1_neutral_plain
+[done] Qwen/Qwen3.5-4B / t2_expert_plain
+[done] Qwen/Qwen3.5-4B / t3_neutral_explanation
+[done] Qwen/Qwen3.5-4B / t4_expert_explanation
+[model] Qwen/Qwen3.5-4B finished in 64s
+[model] loading Qwen/Qwen3.5-9B
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   3%|▎         | 14/427 [00:00<00:02, 139.43it/s]Loading weights:  38%|███▊      | 163/427 [00:00<00:00, 918.88it/s]Loading weights:  60%|█████▉    | 255/427 [00:00<00:00, 835.88it/s]Loading weights:  79%|███████▉  | 339/427 [00:00<00:00, 777.30it/s]Loading weights:  98%|█████████▊| 418/427 [00:00<00:00, 749.89it/s]Loading weights: 100%|██████████| 427/427 [00:00<00:00, 763.22it/s]
+[done] Qwen/Qwen3.5-9B / t1_neutral_plain
+[done] Qwen/Qwen3.5-9B / t2_expert_plain
+[done] Qwen/Qwen3.5-9B / t3_neutral_explanation
+[done] Qwen/Qwen3.5-9B / t4_expert_explanation
+[model] Qwen/Qwen3.5-9B finished in 60s
+[model] loading google/gemma-4-E4B-it
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   6%|▋         | 132/2076 [00:00<00:01, 1259.46it/s]Loading weights:  12%|█▏        | 258/2076 [00:00<00:01, 1135.88it/s]Loading weights:  18%|█▊        | 373/2076 [00:00<00:01, 1092.49it/s]Loading weights:  23%|██▎       | 483/2076 [00:00<00:01, 997.63it/s] Loading weights:  28%|██▊       | 584/2076 [00:00<00:01, 976.54it/s]Loading weights:  33%|███▎      | 683/2076 [00:00<00:01, 972.18it/s]Loading weights:  38%|███▊      | 781/2076 [00:11<00:43, 29.73it/s] Loading weights: 100%|██████████| 2076/2076 [00:11<00:00, 184.89it/s]
+[done] google/gemma-4-E4B-it / t1_neutral_plain
+[done] google/gemma-4-E4B-it / t2_expert_plain
+[done] google/gemma-4-E4B-it / t3_neutral_explanation
+[done] google/gemma-4-E4B-it / t4_expert_explanation
+[model] google/gemma-4-E4B-it finished in 36s
+[model] loading meta-llama/Llama-3.1-8B-Instruct
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights:   0%|          | 1/291 [00:02<13:23,  2.77s/it]Loading weights:  14%|█▎        | 40/291 [00:02<00:12, 19.45it/s]Loading weights:  22%|██▏       | 63/291 [00:03<00:09, 23.11it/s]Loading weights:  26%|██▋       | 77/291 [00:04<00:09, 22.61it/s]Loading weights:  30%|██▉       | 87/291 [00:04<00:08, 24.26it/s]Loading weights:  33%|███▎      | 95/291 [00:04<00:08, 23.99it/s]Loading weights:  35%|███▌      | 103/291 [00:05<00:08, 22.30it/s]Loading weights:  38%|███▊      | 112/291 [00:05<00:08, 21.03it/s]Loading weights:  42%|████▏     | 121/291 [00:06<00:08, 19.98it/s]Loading weights:  45%|████▍     | 130/291 [00:06<00:07, 20.29it/s]Loading weights:  48%|████▊     | 139/291 [00:07<00:07, 19.41it/s]Loading weights:  51%|█████     | 148/291 [00:07<00:07, 19.59it/s]Loading weights:  54%|█████▍    | 157/291 [00:08<00:06, 20.02it/s]Loading weights:  57%|█████▋    | 166/291 [00:08<00:05, 22.20it/s]Loading weights:  60%|██████    | 175/291 [00:08<00:05, 23.02it/s]Loading weights:  61%|██████    | 178/291 [00:08<00:04, 23.44it/s]Loading weights:  63%|██████▎   | 184/291 [00:09<00:04, 24.47it/s]Loading weights:  66%|██████▋   | 193/291 [00:09<00:04, 21.49it/s]Loading weights:  69%|██████▉   | 202/291 [00:10<00:04, 20.56it/s]Loading weights:  70%|███████   | 205/291 [00:10<00:04, 21.41it/s]Loading weights:  73%|███████▎  | 211/291 [00:10<00:04, 19.28it/s]Loading weights:  76%|███████▌  | 220/291 [00:11<00:03, 19.43it/s]Loading weights:  79%|███████▊  | 229/291 [00:11<00:03, 20.40it/s]Loading weights:  82%|████████▏ | 238/291 [00:12<00:02, 19.93it/s]Loading weights:  85%|████████▍ | 247/291 [00:12<00:02, 21.04it/s]Loading weights:  88%|████████▊ | 256/291 [00:12<00:01, 21.63it/s]Loading weights:  91%|█████████ | 265/291 [00:13<00:01, 24.70it/s]Loading weights:  92%|█████████▏| 268/291 [00:13<00:00, 24.94it/s]Loading weights:  94%|█████████▍| 274/291 [00:13<00:00, 24.26it/s]Loading weights:  97%|█████████▋| 283/291 [00:13<00:00, 27.07it/s]Loading weights: 100%|██████████| 291/291 [00:13<00:00, 21.27it/s]
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+[done] meta-llama/Llama-3.1-8B-Instruct / t1_neutral_plain
+[done] meta-llama/Llama-3.1-8B-Instruct / t2_expert_plain
+[done] meta-llama/Llama-3.1-8B-Instruct / t3_neutral_explanation
+[done] meta-llama/Llama-3.1-8B-Instruct / t4_expert_explanation
+[model] meta-llama/Llama-3.1-8B-Instruct finished in 29s
+[model] loading meta-llama/Llama-3.2-3B-Instruct
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]Loading weights:   0%|          | 1/254 [00:01<08:21,  1.98s/it]Loading weights:  37%|███▋      | 93/254 [00:02<00:02, 60.46it/s]Loading weights:  52%|█████▏    | 131/254 [00:02<00:02, 60.42it/s]Loading weights:  61%|██████    | 154/254 [00:03<00:01, 61.71it/s]Loading weights:  67%|██████▋   | 171/254 [00:03<00:01, 60.76it/s]Loading weights:  72%|███████▏  | 184/254 [00:03<00:01, 58.66it/s]Loading weights:  77%|███████▋  | 195/254 [00:03<00:00, 60.63it/s]Loading weights:  81%|████████  | 205/254 [00:03<00:00, 61.89it/s]Loading weights:  84%|████████▍ | 214/254 [00:04<00:00, 62.64it/s]Loading weights:  87%|████████▋ | 222/254 [00:04<00:00, 60.78it/s]Loading weights:  91%|█████████ | 230/254 [00:04<00:00, 59.21it/s]Loading weights:  93%|█████████▎| 237/254 [00:04<00:00, 52.48it/s]Loading weights:  97%|█████████▋| 246/254 [00:04<00:00, 52.83it/s]Loading weights: 100%|██████████| 254/254 [00:04<00:00, 53.42it/s]
+[done] meta-llama/Llama-3.2-3B-Instruct / t1_neutral_plain
+[done] meta-llama/Llama-3.2-3B-Instruct / t2_expert_plain
+[done] meta-llama/Llama-3.2-3B-Instruct / t3_neutral_explanation
+[done] meta-llama/Llama-3.2-3B-Instruct / t4_expert_explanation
+[model] meta-llama/Llama-3.2-3B-Instruct finished in 15s
+[model] loading microsoft/Phi-4-mini-instruct
+[transformers] This model config has set a `rope_parameters['original_max_position_embeddings']` field, to be used together with `max_position_embeddings` to determine a scaling factor. Please set the `factor` field of `rope_parameters`with this ratio instead -- we recommend the use of this field over `original_max_position_embeddings`, as it is compatible with most model architectures.
+Loading weights:   0%|          | 0/194 [00:00<?, ?it/s]Loading weights:   1%|          | 1/194 [00:03<12:42,  3.95s/it]Loading weights:  52%|█████▏    | 100/194 [00:04<00:02, 34.04it/s]Loading weights:  71%|███████   | 137/194 [00:05<00:01, 31.37it/s]Loading weights:  81%|████████▏ | 158/194 [00:06<00:01, 31.09it/s]Loading weights:  89%|████████▊ | 172/194 [00:06<00:00, 30.40it/s]Loading weights:  94%|█████████▍| 182/194 [00:06<00:00, 33.13it/s]Loading weights:  98%|█████████▊| 191/194 [00:07<00:00, 33.72it/s]Loading weights: 100%|██████████| 194/194 [00:07<00:00, 27.46it/s]
+[done] microsoft/Phi-4-mini-instruct / t1_neutral_plain
+[done] microsoft/Phi-4-mini-instruct / t2_expert_plain
+[done] microsoft/Phi-4-mini-instruct / t3_neutral_explanation
+[done] microsoft/Phi-4-mini-instruct / t4_expert_explanation
+[model] microsoft/Phi-4-mini-instruct finished in 20s
+[write] predictions -> outputs/missing3_clean_predictions.jsonl

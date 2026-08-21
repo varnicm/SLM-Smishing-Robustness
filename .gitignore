@@ -1,0 +1,30 @@
+# Python / Jupyter junk
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Hugging Face download cache — these are public model weights that re-download
+# automatically; committing them would add many GB for no benefit.
+hf_cache/
+
+# Stray empty files created by mistyped commands (safe to ignore)
+--limit
+--models
+--out
+--out-dir
+--partition=gpu-warp
+--perturbed
+--preds
+--min-chars
+ham
+smishing
+
+# If you do NOT want the many intermediate experiment folders and logs in the
+# repo, uncomment the lines below. Leaving them commented keeps EVERYTHING.
+# *.log
+# outputs/boot_*/
+# outputs/bootstrap_*/
+# outputs/trans_*/
+# outputs/transitions_*/
+# outputs/verify_benign_*/
+# outputs/*_pilot*/

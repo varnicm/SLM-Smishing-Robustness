@@ -1,0 +1,9 @@
+usage: run_inference_batched.py [-h] --perturbed PERTURBED --out OUT --models
+                                MODELS [MODELS ...]
+                                [--templates TEMPLATES [TEMPLATES ...]]
+                                [--device DEVICE] [--limit LIMIT]
+                                [--include-invalid] [--raw-cap RAW_CAP]
+                                [--max-new-expl MAX_NEW_EXPL]
+                                [--max-new-plain MAX_NEW_PLAIN]
+                                [--batch-size BATCH_SIZE]
+run_inference_batched.py: error: unrecognized arguments: --gres=gpu:1 --mem=48G --cpus-per-task=4 --time=12:00:00  

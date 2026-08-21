@@ -1,0 +1,35 @@
+% Requires \usepackage{booktabs}
+% Real perturbation examples from the dataset: one representative smishing message
+% per attack level, shown as original vs. perturbed. Plain text, no highlighting.
+
+\begin{table*}[t]
+\centering
+\caption{Real perturbation examples from our dataset, one representative smishing
+message per attack level (original vs.\ perturbed). URLs and codes are preserved
+verbatim; only the message text is perturbed. Character- and word-level attacks
+modify roughly 30\% of the eligible tokens; sentence-level paraphrases the message;
+and multi-level applies word, character, and sentence operations in sequence.}
+\label{tab:perturbation-examples}
+\footnotesize
+\begin{tabular}{@{}l p{0.42\textwidth} p{0.42\textwidth}@{}}
+\toprule
+\textbf{Level} & \textbf{Original message} & \textbf{Perturbed message} \\
+\midrule
+Character &
+Netflix: Please update your membership with us to continue watching. bedy13.com/V3n4Ovhcqw &
+Netflix: Please upda te y0ur members hip with us to continue watching. bedy13.com/V3n4Ovhcqw \\
+\addlinespace
+Word &
+Application from: KJN468 - Status: Completed, check results: veilknitting.com/y8mXEyk &
+Application from: KJN468 - Condition: Completed, check outcome: veilknitting.com/y8mXEyk \\
+\addlinespace
+Sentence &
+(Your amazon account has been suspended.\ more info 819dOl.bolejug.us/?ID-7SFBF4) ZKNWY &
+Your Amazon account has been suspended. 819dOl.bolejug.us/?ID-7SFBF4) \\
+\addlinespace
+Multi-level &
+NewDriving Rules: Esther CA Motorists are worried: chl8vo.com/ykrrb Reply Stop to Stop &
+Motorists are required to reply stop to stop. chl8vo.com/ykrrb NewDr1ving \\
+\bottomrule
+\end{tabular}
+\end{table*}

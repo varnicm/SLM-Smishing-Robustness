@@ -1,0 +1,59 @@
+[load] 242796 explanation rows (t3/t4)
+[matched] both_correct=179910  empty_excluded=19586  no_partner_excluded=0  matched=160324
+Loading weights:   0%|          | 0/389 [00:00<?, ?it/s]Loading weights:  22%|██▏       | 84/389 [00:00<00:00, 776.48it/s]Loading weights:  53%|█████▎    | 206/389 [00:00<00:00, 1023.48it/s]Loading weights: 100%|██████████| 389/389 [00:00<00:00, 1327.23it/s]
+[transformers] [1mRobertaModel LOAD REPORT[0m from: roberta-large
+Key                       | Status     | 
+--------------------------+------------+-
+lm_head.layer_norm.bias   | UNEXPECTED | 
+lm_head.bias              | UNEXPECTED | 
+lm_head.layer_norm.weight | UNEXPECTED | 
+lm_head.dense.bias        | UNEXPECTED | 
+lm_head.dense.weight      | UNEXPECTED | 
+pooler.dense.weight       | MISSING    | 
+pooler.dense.bias         | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4972.36it/s]
+
+=== (A) Instruction compliance ===
+  Qwen/Qwen3.5-4B|t3_neutral_explanation        compliance=1.000  (empty 0/20233)
+  Qwen/Qwen3.5-4B|t4_expert_explanation         compliance=1.000  (empty 0/20233)
+  Qwen/Qwen3.5-9B|t3_neutral_explanation        compliance=1.000  (empty 0/20233)
+  Qwen/Qwen3.5-9B|t4_expert_explanation         compliance=1.000  (empty 0/20233)
+  google/gemma-4-E4B-it|t3_neutral_explanation  compliance=1.000  (empty 0/20233)
+  google/gemma-4-E4B-it|t4_expert_explanation   compliance=1.000  (empty 0/20233)
+  meta-llama/Llama-3.1-8B-Instruct|t3_neutral_explanation compliance=0.197  (empty 16256/20233)
+  meta-llama/Llama-3.1-8B-Instruct|t4_expert_explanation compliance=0.767  (empty 4704/20233)
+  meta-llama/Llama-3.2-3B-Instruct|t3_neutral_explanation compliance=0.999  (empty 14/20233)
+  meta-llama/Llama-3.2-3B-Instruct|t4_expert_explanation compliance=0.998  (empty 45/20233)
+  microsoft/Phi-4-mini-instruct|t3_neutral_explanation compliance=0.968  (empty 649/20233)
+  microsoft/Phi-4-mini-instruct|t4_expert_explanation compliance=0.987  (empty 255/20233)
+
+=== Validation ===
+  n_matched_true=160324  n_matched_baseline=160324  n_pairwise_gaps=160324
+  n_matched_true == n_matched_baseline == n_pairwise_gaps
+  validation: PASS
+
+=== Pooled pairwise gap  sim(A,A') - sim(A,B) ===
+  bertscore_f1   gap mean=0.0298  median=0.027  std=0.0304  n=160324   (true=0.9147  baseline=0.8849)
+  sentcos        gap mean=0.1843  median=0.1891  std=0.1258  n=160324   (true=0.8452  baseline=0.6609)
+  rougel_f1      gap mean=0.1361  median=0.108  std=0.1707  n=160324   (true=0.4485  baseline=0.3124)
+  jaccard        gap mean=0.143  median=0.1207  std=0.1522  n=160324   (true=0.425  baseline=0.282)
+
+=== Pairwise gap by model — bertscore_f1 ===
+  model                   gap_mean  gap_med  gap_std    true    base      n
+  Qwen/Qwen3.5-4B           0.0237   0.0216   0.0258  0.9008  0.8771  32853
+  Qwen/Qwen3.5-9B           0.0274   0.0249   0.0283  0.9031  0.8757  30189
+  google/gemma-4-E4B-it     0.0334   0.0319   0.0335   0.916  0.8827  33934
+  meta-llama/Llama-3.1-8B-Instruct    0.0318   0.0298   0.0276  0.9271  0.8953  12089
+  meta-llama/Llama-3.2-3B-Instruct    0.0313   0.0284   0.0305  0.9348  0.9035  25121
+  microsoft/Phi-4-mini-instruct    0.0334   0.0299   0.0333  0.9186  0.8852  26138
+
+  A small positive gap suggests that much of the observed similarity may
+  reflect model-, prompt-, and label-conditioned response patterns rather
+  than message-specific consistency.
+
+[write] outputs/analysis/dim2_matched/explanation_dim2_matched.json
+[write] outputs/analysis/dim2_matched/matched_pairs.jsonl

@@ -1,0 +1,11 @@
+[data] 18126 valid perturbed | 2107 unique clean msgs
+[plan] 1 models x 4 templates | batch_size=16
+[model] loading Qwen/Qwen3.5-9B
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:  13%|█▎        | 56/427 [00:00<00:00, 489.64it/s]Loading weights:  27%|██▋       | 116/427 [00:00<00:00, 549.23it/s]Loading weights:  40%|████      | 172/427 [00:00<00:00, 516.82it/s]Loading weights:  53%|█████▎    | 225/427 [00:00<00:00, 466.87it/s]Loading weights:  88%|████████▊ | 377/427 [00:00<00:00, 791.07it/s]Loading weights: 100%|██████████| 427/427 [00:00<00:00, 675.98it/s]
+[done] Qwen/Qwen3.5-9B / t1_neutral_plain
+[done] Qwen/Qwen3.5-9B / t2_expert_plain
+[done] Qwen/Qwen3.5-9B / t3_neutral_explanation
+[done] Qwen/Qwen3.5-9B / t4_expert_explanation
+[model] Qwen/Qwen3.5-9B finished in 35017s
+[write] predictions -> outputs/preds_Qwen_Qwen3.5-9B.jsonl

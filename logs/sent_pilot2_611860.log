@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/run_perturbations_sampled.py", line 30, in <module>
+    import perturbations_sampled as P
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/perturbations_sampled.py", line 340
+    /*
+    ^
+SyntaxError: invalid syntax

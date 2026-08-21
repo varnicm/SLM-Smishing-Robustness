@@ -1,0 +1,43 @@
+CUDA visible in job: True | devices: 1
+[load] counter-fitted vectors from data/counter-fitted-vectors.txt
+[load] PEGASUS will load on first sentence/multi attack
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 18606.03it/s]
+[data] 2110 messages | attacks=['character', 'word', 'sentence', 'multi'] | seeds=[0, 1, 2]
+[done] attack=character seed=0
+[done] attack=character seed=1
+[done] attack=character seed=2
+[done] attack=word seed=0
+[done] attack=word seed=1
+[done] attack=word seed=2
+Traceback (most recent call last):
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/run_perturbations.py", line 189, in <module>
+    main()
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/run_perturbations.py", line 153, in main
+    pert, edits = P.sentence_level(msg, rng, paraphraser)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/perturbations.py", line 302, in sentence_level
+    para = paraphraser.paraphrase(body) if body else body
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/perturbations.py", line 283, in paraphrase
+    self.load()
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/perturbations.py", line 276, in load
+    self._tok = AutoTokenizer.from_pretrained(self.model_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 839, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1743, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1933, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/tokenization_utils_tokenizers.py", line 376, in __init__
+    raise ValueError(
+ValueError: Couldn't instantiate the backend tokenizer from one of: 
+(1) a `tokenizers` library serialization file, 
+(2) a slow tokenizer instance to convert or 
+(3) an equivalent slow tokenizer class to instantiate and convert. 
+You need to have sentencepiece or tiktoken installed to convert a slow tokenizer to a fast one.
+[done] perturbation pipeline finished

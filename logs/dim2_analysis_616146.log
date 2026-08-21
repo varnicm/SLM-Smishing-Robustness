@@ -1,0 +1,47 @@
+[load] 242796 explanation rows (t3/t4)
+Loading weights:   0%|          | 0/389 [00:00<?, ?it/s]Loading weights:  13%|█▎        | 51/389 [00:00<00:00, 489.65it/s]Loading weights:  27%|██▋       | 105/389 [00:00<00:00, 496.54it/s]Loading weights:  65%|██████▌   | 254/389 [00:00<00:00, 917.97it/s]Loading weights: 100%|██████████| 389/389 [00:00<00:00, 986.88it/s]
+[transformers] [1mRobertaModel LOAD REPORT[0m from: roberta-large
+Key                       | Status     | 
+--------------------------+------------+-
+lm_head.bias              | UNEXPECTED | 
+lm_head.dense.weight      | UNEXPECTED | 
+lm_head.layer_norm.bias   | UNEXPECTED | 
+lm_head.dense.bias        | UNEXPECTED | 
+lm_head.layer_norm.weight | UNEXPECTED | 
+pooler.dense.bias         | MISSING    | 
+pooler.dense.weight       | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2011.66it/s]
+[true-pair] both-correct=179910  empty-excluded=19586 (0.1089)  scored=160324
+[baseline] 23033 same-label / different-message pairs
+
+=== (A) Instruction compliance (share producing a rationale) ===
+  Qwen/Qwen3.5-4B|t3_neutral_explanation        compliance=1.000  (empty 0/20233)
+  Qwen/Qwen3.5-4B|t4_expert_explanation         compliance=1.000  (empty 0/20233)
+  Qwen/Qwen3.5-9B|t3_neutral_explanation        compliance=1.000  (empty 0/20233)
+  Qwen/Qwen3.5-9B|t4_expert_explanation         compliance=1.000  (empty 0/20233)
+  google/gemma-4-E4B-it|t3_neutral_explanation  compliance=1.000  (empty 0/20233)
+  google/gemma-4-E4B-it|t4_expert_explanation   compliance=1.000  (empty 0/20233)
+  meta-llama/Llama-3.1-8B-Instruct|t3_neutral_explanation compliance=0.197  (empty 16256/20233)
+  meta-llama/Llama-3.1-8B-Instruct|t4_expert_explanation compliance=0.767  (empty 4704/20233)
+  meta-llama/Llama-3.2-3B-Instruct|t3_neutral_explanation compliance=0.999  (empty 14/20233)
+  meta-llama/Llama-3.2-3B-Instruct|t4_expert_explanation compliance=0.998  (empty 45/20233)
+  microsoft/Phi-4-mini-instruct|t3_neutral_explanation compliance=0.968  (empty 649/20233)
+  microsoft/Phi-4-mini-instruct|t4_expert_explanation compliance=0.987  (empty 255/20233)
+
+=== (D) True-pair vs same-label baseline — bertscore_f1 (per model) ===
+  model                   true-pair   baseline      gap
+  Qwen/Qwen3.5-4B             0.901      0.877   +0.024
+  Qwen/Qwen3.5-9B             0.903      0.874   +0.029
+  google/gemma-4-E4B-it       0.916      0.884   +0.032
+  meta-llama/Llama-3.1-8B-Instruct      0.927      0.897   +0.030
+  meta-llama/Llama-3.2-3B-Instruct      0.935      0.903   +0.032
+  microsoft/Phi-4-mini-instruct      0.919      0.887   +0.031
+
+  A small gap => high similarity is label-conditioned boilerplate, not preserved
+  message-specific justification (report as descriptive only).
+
+[write] outputs/analysis/dim2/explanation_dim2.json

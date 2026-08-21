@@ -1,0 +1,64 @@
+[data] 3000 explanation-template rows
+[eligible] 649 both-correct rationale pairs
+[bertscore] 649 pairs, model=roberta-large
+Loading weights:   0%|          | 0/389 [00:00<?, ?it/s]Loading weights:  14%|█▍        | 56/389 [00:00<00:00, 380.31it/s]Loading weights:  27%|██▋       | 104/389 [00:00<00:00, 408.04it/s]Loading weights:  67%|██████▋   | 261/389 [00:00<00:00, 864.31it/s]Loading weights: 100%|██████████| 389/389 [00:00<00:00, 885.27it/s]
+[transformers] [1mRobertaModel LOAD REPORT[0m from: roberta-large
+Key                       | Status     | 
+--------------------------+------------+-
+lm_head.layer_norm.bias   | UNEXPECTED | 
+lm_head.bias              | UNEXPECTED | 
+lm_head.layer_norm.weight | UNEXPECTED | 
+lm_head.dense.weight      | UNEXPECTED | 
+lm_head.dense.bias        | UNEXPECTED | 
+pooler.dense.weight       | MISSING    | 
+pooler.dense.bias         | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+calculating scores...
+computing bert embedding.
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:01<00:22,  1.21s/it] 10%|█         | 2/20 [00:02<00:17,  1.03it/s] 15%|█▌        | 3/20 [00:02<00:11,  1.43it/s] 20%|██        | 4/20 [00:02<00:09,  1.76it/s] 25%|██▌       | 5/20 [00:03<00:07,  2.02it/s] 30%|███       | 6/20 [00:03<00:06,  2.28it/s] 35%|███▌      | 7/20 [00:03<00:05,  2.47it/s] 40%|████      | 8/20 [00:04<00:04,  2.66it/s] 45%|████▌     | 9/20 [00:04<00:03,  2.81it/s] 50%|█████     | 10/20 [00:04<00:03,  3.01it/s] 55%|█████▌    | 11/20 [00:04<00:02,  3.23it/s] 60%|██████    | 12/20 [00:05<00:02,  3.40it/s] 65%|██████▌   | 13/20 [00:05<00:01,  3.72it/s] 70%|███████   | 14/20 [00:05<00:01,  4.01it/s] 75%|███████▌  | 15/20 [00:05<00:01,  4.11it/s] 80%|████████  | 16/20 [00:06<00:00,  4.45it/s] 85%|████████▌ | 17/20 [00:06<00:00,  4.67it/s] 90%|█████████ | 18/20 [00:06<00:00,  5.01it/s] 95%|█████████▌| 19/20 [00:06<00:00,  5.36it/s] 95%|█████████▌| 19/20 [00:06<00:00,  2.90it/s]
+[bertscore] failed: RobertaTokenizer has no attribute build_inputs_with_special_tokens
+[write] outputs/stab_pilot/explanation_stability.txt
+============================================================================================
+DIMENSION 2 - EXPLANATION STABILITY
+============================================================================================
+
+Textual similarity between the rationale on the CLEAN message and the rationale
+on the PERTURBED message. Computed ONLY on pairs the model classifies correctly
+in BOTH forms, which CONTROLS FOR prediction correctness.
+
+This measures STABILITY - not faithfulness, correctness, or grounding.
+A rationale can be perfectly stable and still be wrong.
+
+PRIMARY  : BERTScore F1 (semantic, paraphrase-robust)
+SECONDARY: ROUGE-L (ordered overlap); token-Jaccard (lexical set overlap)
+
+--------------------------------------------------------------------------------------------
+(A) ELIGIBILITY - pairs correctly classified in BOTH clean and perturbed form.
+    A model with a SMALL eligible set may look stable only because its eligible
+    cases are the easy ones. Read table (B) against this.
+--------------------------------------------------------------------------------------------
+model                        attack         eligible      total     rate
+Phi-4-mini-instruct          character           649        893    72.7%
+Phi-4-mini-instruct          ALL                 649        893    72.7%
+
+--------------------------------------------------------------------------------------------
+(B) STABILITY by model (pooled over templates and attacks)
+--------------------------------------------------------------------------------------------
+model                               n   ROUGE-L   Jaccard
+Phi-4-mini-instruct               649     0.462     0.418
+
+--------------------------------------------------------------------------------------------
+(C) STABILITY by model x attack   (values = token-Jaccard)
+--------------------------------------------------------------------------------------------
+model                          character
+Phi-4-mini-instruct                0.418
+
+--------------------------------------------------------------------------------------------
+(D) STABILITY by model x template (does role framing shift the rationale?)
+--------------------------------------------------------------------------------------------
+model                           t3_neutral_explanation
+Phi-4-mini-instruct                              0.418
+

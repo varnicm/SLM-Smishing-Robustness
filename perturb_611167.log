@@ -1,0 +1,30 @@
+CUDA visible in job: True | devices: 1
+[load] counter-fitted vectors from data/counter-fitted-vectors.txt
+[load] PEGASUS will load on first sentence/multi attack
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 29192.06it/s]
+[data] 2110 messages | attacks=['character', 'word', 'sentence', 'multi'] | seeds=[0, 1, 2]
+[done] attack=character seed=0
+[done] attack=character seed=1
+[done] attack=character seed=2
+[done] attack=word seed=0
+[done] attack=word seed=1
+[done] attack=word seed=2
+Loading weights:   0%|          | 0/678 [00:00<?, ?it/s]Loading weights: 100%|██████████| 678/678 [00:00<00:00, 10450.89it/s]
+[transformers] [1mPegasusForConditionalGeneration LOAD REPORT[0m from: tuner007/pegasus_paraphrase
+Key                                  | Status  | 
+-------------------------------------+---------+-
+model.encoder.embed_positions.weight | MISSING | 
+model.decoder.embed_positions.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[done] attack=sentence seed=0
+[done] attack=sentence seed=1
+[done] attack=sentence seed=2
+[done] attack=multi seed=0
+[done] attack=multi seed=1
+[done] attack=multi seed=2
+[write] 25320 variants -> outputs/smishtank_perturbed.jsonl
+[gate] 9330 below sim<0.7 (36.8%) flagged valid=false
+[done] perturbation pipeline finished

@@ -1,0 +1,46 @@
+[data] 242796 explanation-template rows
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 15277.74it/s]
+[transformers] [1mRobertaForSequenceClassification LOAD REPORT[0m from: roberta-large-mnli
+Key                         | Status     |  | 
+----------------------------+------------+--+-
+roberta.pooler.dense.weight | UNEXPECTED |  | 
+roberta.pooler.dense.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[write] outputs/analysis_expl_final/explanation_reliability.txt
+=== Conditional Explanation Reliability ===
+Subset: instances the model classifies CORRECTLY on BOTH the clean and
+the perturbed input. This isolates explanation-level failure from
+prediction-level failure.
+
+stability  = token-Jaccard(clean rationale, perturbed rationale); higher=more stable
+labelcons  = fraction of rationales that ENTAIL the model's own predicted label (NLI proxy)
+Grounding/unsupported-cue is NOT reported: automatic verification proved
+unreliable (see paper limitations).
+
+model                            template                         n  stability  labelcons
+------------------------------------------------------------------------------------------
+Qwen3.5-4B                       t3_neutral_explanation       16742      0.309      0.319
+Qwen3.5-4B                       t4_expert_explanation        16111      0.303      0.323
+Qwen3.5-9B                       t3_neutral_explanation       15221      0.316      0.322
+Qwen3.5-9B                       t4_expert_explanation        14968      0.309      0.320
+gemma-4-E4B-it                   t3_neutral_explanation       17041      0.368      0.485
+gemma-4-E4B-it                   t4_expert_explanation        16893      0.352      0.576
+Llama-3.1-8B-Instruct            t3_neutral_explanation       15893      0.762      0.175
+Llama-3.1-8B-Instruct            t4_expert_explanation        14508      0.472      0.582
+Llama-3.2-3B-Instruct            t3_neutral_explanation       12691      0.467      0.724
+Llama-3.2-3B-Instruct            t4_expert_explanation        12518      0.460      0.716
+Phi-4-mini-instruct              t3_neutral_explanation       13603      0.385      0.670
+Phi-4-mini-instruct              t4_expert_explanation        13721      0.389      0.690
+
+=== pooled per model (over templates) ===
+model                                   n  stability  labelcons
+----------------------------------------------------------------
+Qwen3.5-4B                          32853      0.306      0.321
+Qwen3.5-9B                          30189      0.313      0.321
+gemma-4-E4B-it                      33934      0.360      0.530
+Llama-3.1-8B-Instruct               30401      0.624      0.369
+Llama-3.2-3B-Instruct               25209      0.463      0.720
+Phi-4-mini-instruct                 27324      0.387      0.680
+

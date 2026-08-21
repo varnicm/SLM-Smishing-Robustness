@@ -1,0 +1,5 @@
+[data] 18126 valid perturbed | 2107 unique clean msgs
+[plan] 1 models x 4 templates
+[model] loading google/gemma-4-E4B-it
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   4%|▎         | 77/2076 [00:00<00:02, 743.39it/s]Loading weights:   8%|▊         | 173/2076 [00:00<00:02, 840.03it/s]Loading weights:  12%|█▏        | 257/2076 [00:00<00:02, 654.44it/s]Loading weights:  18%|█▊        | 364/2076 [00:00<00:02, 776.63it/s]Loading weights:  21%|██▏       | 446/2076 [00:00<00:02, 694.18it/s]Loading weights:  25%|██▌       | 519/2076 [00:00<00:02, 691.28it/s]Loading weights:  29%|██▊       | 592/2076 [00:00<00:02, 694.61it/s]Loading weights:  32%|███▏      | 674/2076 [00:00<00:01, 719.12it/s]Loading weights:  36%|███▌      | 752/2076 [00:01<00:01, 712.83it/s]Loading weights:  40%|███▉      | 825/2076 [00:10<00:50, 24.90it/s] Loading weights: 100%|██████████| 2076/2076 [00:10<00:00, 189.03it/s]
+slurmstepd-gpunode009: error: *** JOB 611281 ON gpunode009 CANCELLED AT 2026-07-09T09:08:07 ***

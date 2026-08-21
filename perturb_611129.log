@@ -1,0 +1,72 @@
+[load] counter-fitted vectors from data/counter-fitted-vectors.txt
+[load] PEGASUS will load on first sentence/multi attack
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 33486.81it/s]
+[data] 2110 messages | attacks=['character', 'word', 'sentence', 'multi'] | seeds=[0, 1, 2]
+[done] attack=character seed=0
+[done] attack=character seed=1
+[done] attack=character seed=2
+[done] attack=word seed=0
+[done] attack=word seed=1
+[done] attack=word seed=2
+[transformers] Could not extract SentencePiece model from /work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/hf_cache/hub/models--tuner007--pegasus_paraphrase/snapshots/0159e2949ca73657a2f1329898f51b7bb53b9ab2/spiece.model using sentencepiece library due to 
+SentencePieceExtractor requires the protobuf library but it was not found in your environment. Check out the instructions on the
+installation page of its repo: https://github.com/protocolbuffers/protobuf/tree/master/python#installation and follow the ones
+that match your environment. Please note that you may need to restart your runtime after installation.
+. Falling back to TikToken extractor.
+Traceback (most recent call last):
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/tokenization_utils_tokenizers.py", line 217, in convert_to_native_format
+    extractor = SentencePieceExtractor(vocab_file)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 153, in __init__
+    requires_backends(self, "protobuf")
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/utils/import_utils.py", line 2063, in requires_backends
+    raise ImportError("".join(failed))
+ImportError: 
+SentencePieceExtractor requires the protobuf library but it was not found in your environment. Check out the instructions on the
+installation page of its repo: https://github.com/protocolbuffers/protobuf/tree/master/python#installation and follow the ones
+that match your environment. Please note that you may need to restart your runtime after installation.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1920, in extract_vocab_merges_from_model
+    from tiktoken.load import load_tiktoken_bpe
+ModuleNotFoundError: No module named 'tiktoken'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/run_perturbations.py", line 189, in <module>
+    main()
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/run_perturbations.py", line 153, in main
+    pert, edits = P.sentence_level(msg, rng, paraphraser)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/perturbations.py", line 297, in sentence_level
+    para = paraphraser.paraphrase(body) if body else body
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/perturbations.py", line 278, in paraphrase
+    self.load()
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/perturbations.py", line 273, in load
+    self._tok = PegasusTokenizer.from_pretrained(self.model_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1743, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 1930, in _from_pretrained
+    init_kwargs = cls.convert_to_native_format(**init_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/tokenization_utils_tokenizers.py", line 283, in convert_to_native_format
+    local_kwargs["tokenizer_object"] = converter.converted()
+                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1957, in converted
+    tokenizer = self.tokenizer()
+                ^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1950, in tokenizer
+    vocab_scores, merges = self.extract_vocab_merges_from_model(self.vocab_file)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tntech.edu/ssanjarip42/.conda/envs/slm/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py", line 1922, in extract_vocab_merges_from_model
+    raise ValueError(
+ValueError: `tiktoken` is required to read a `tiktoken` file. Install it with `pip install tiktoken`.
+[done] perturbation pipeline finished

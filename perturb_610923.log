@@ -1,0 +1,5 @@
+[setup] downloading counter-fitted vectors...
+Archive:  data/cf.zip
+  inflating: data/counter-fitted-vectors.txt  
+/var/spool/slurm/d/job610923/slurm_script: line 28: python: command not found
+[done] perturbation pipeline finished

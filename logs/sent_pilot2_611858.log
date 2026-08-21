@@ -1,0 +1,79 @@
+[skip] no synonym source needed for requested attacks
+[load] PEGASUS will load on first sentence/multi attack
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10669.10it/s]
+[data] 20 messages | attacks=['sentence'] | seeds=[0, 1, 2]
+Loading weights:   0%|          | 0/678 [00:00<?, ?it/s]Loading weights: 100%|██████████| 678/678 [00:00<00:00, 11683.20it/s]
+[transformers] [1mPegasusForConditionalGeneration LOAD REPORT[0m from: tuner007/pegasus_paraphrase
+Key                                  | Status  | 
+-------------------------------------+---------+-
+model.decoder.embed_positions.weight | MISSING | 
+model.encoder.embed_positions.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[transformers] Group Beam Search was moved to a `custom_generate` repo: https://hf.co/transformers-community/group-beam-search. To prevent loss of backward compatibility, add `custom_generate='transformers-community/group-beam-search'` to your `generate` call before v4.62.0.
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[done] attack=sentence seed=0
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[done] attack=sentence seed=1
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[paraphrase-skip] ValueError: Group Beam Search requires `trust_remote_code=True` in your `generate` call, sin
+[done] attack=sentence seed=2
+[write] 60 variants -> outputs/sentence_pilot2.jsonl
+[gate] 0 below sim<0.65 (0.0%) flagged valid=false

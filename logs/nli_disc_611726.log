@@ -1,0 +1,22 @@
+[data] correct-prediction rationales: 171549
+[data] WRONG-prediction rationales:   26269
+Loading weights:   0%|          | 0/394 [00:00<?, ?it/s]Loading weights: 100%|██████████| 394/394 [00:00<00:00, 30097.91it/s]
+[nli] cross-encoder/nli-deberta-v3-large id2label={0: 'contradiction', 1: 'entailment', 2: 'neutral'} entail_idx=1
+
+======================================================================
+SCORE DISTRIBUTIONS (higher = message supports the rationale+verdict)
+======================================================================
+  A correct predictions      n= 150  mean=0.892  median=0.988  frac>=0.5=0.91
+  B WRONG predictions        n= 150  mean=0.788  median=0.983  frac>=0.5=0.81
+  C shuffled message         n= 150  mean=0.890  median=0.989  frac>=0.5=0.91
+  D flipped verdict          n= 150  mean=0.051  median=0.000  frac>=0.5=0.05
+
+======================================================================
+VERDICT
+======================================================================
+  [FAIL] metric reads the MESSAGE (A > C)
+  [PASS] metric detects wrong-label rationales (A > B)
+  [PASS] verdict sentence matters (A > D)
+
+  -> metric does NOT discriminate on at least one axis.
+     Treat label-consistency with the same skepticism as grounding.

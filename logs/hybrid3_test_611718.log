@@ -1,0 +1,307 @@
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 16396.55it/s]
+[transformers] [1mRobertaForSequenceClassification LOAD REPORT[0m from: roberta-large-mnli
+Key                         | Status     |  | 
+----------------------------+------------+--+-
+roberta.pooler.dense.weight | UNEXPECTED |  | 
+roberta.pooler.dense.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+==============================================================================
+id=msg-00001 cond=clean pred=smishing true=smishing
+CLEAN: Notif: From: Usps CONTENT: A parcel needs to be delivered for you but is pending an update. To update your preferences head to 83h
+DEOBF: notif: from: usps content: a parcel needs to be delivered for you but is pending an update. to update your preferences head to 83h
+RAT:   The SMS message appears to be a phishing attempt, as it contains a suspicious link (83hm2uaj.kzra.in/?/OVA013) and requests the recipient to
+   cue=link           claimed=YES  present=True   GROUNDED
+==============================================================================
+id=msg-00002 cond=clean pred=smishing true=smishing
+CLEAN: See the intimate pictures Kelly released 4 you! Unlock below...http://dtwxzf.com/003u52r
+DEOBF: see the intimate pictures kelly released 4 you! unlock below...http://dtwxzf.com/003u52r
+RAT:   The SMS message appears to be a smishing attempt. The evidence for this classification includes the use of an urgent and enticing subject li
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=impersonation  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=personal_info  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=payment        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=urgency        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+==============================================================================
+id=msg-00003 cond=clean pred=smishing true=ham
+CLEAN: Sorry, I'll came to ur place later..
+DEOBF: sorry, i'll came to ur place later..
+RAT:   The SMS message "Sorry, I'll came to ur place later.." lacks clarity and contains spelling errors, which could be indicative of a smishing a
+==============================================================================
+id=msg-00004 cond=clean pred=smishing true=smishing
+CLEAN: Your name came up Esther in this [query] for missing $ mim342.com/e1630/75b822a YourPhone bill: $85 Power.
+DEOBF: your name came up esther in this [query] for missing $ mim342.com/e1630/75b822a yourphone bill: $85 power.
+RAT:   The SMS message appears to be a scam, as it contains several suspicious cues. The message includes a request for personal information (the u
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=urgency        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+==============================================================================
+id=msg-00005 cond=clean pred=ham true=smishing
+CLEAN: Michael you havent added me yet :( are you still single? Check out my latest snaps gt33.pw/snlXXnncQ3 Im bored during this lockdow
+DEOBF: michael you havent added me yet :( are you still single? check out my latest snaps gt33.pw/snlxxnncq3 im bored during this lockdow
+RAT:   The SMS message appears to be a personal invitation from someone named Michael, asking if the recipient is still single and offering to shar
+==============================================================================
+id=msg-00006 cond=clean pred=smishing true=smishing
+CLEAN: Amazon.com We temporarily placed your Amazon suspended to Restore follow instruction below. https://kirjaudu.latodesign.fi/free/ma
+DEOBF: amazon.com we temporarily placed your amazon suspended to restore follow instruction below. https://kirjaudu.latodesign.fi/free/ma
+RAT:   The SMS message appears to be a smishing attempt. The evidence for this classification includes:
+
+1. **Urgency**: The message creates a sens
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=impersonation  claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=payment        claimed=YES  present=True   GROUNDED
+   cue=urgency        claimed=YES  present=True   GROUNDED
+==============================================================================
+id=msg-00007 cond=clean pred=ham true=ham
+CLEAN: Happy new years melody!
+DEOBF: happy new years melody!
+RAT:   The SMS message "Happy new years melody!" does not contain any explicit requests for personal information, payment, or links that could be c
+==============================================================================
+id=msg-00008 cond=clean pred=ham true=ham
+CLEAN: Sorry im getting up now, feel really bad- totally rejected that kinda me thing.
+DEOBF: sorry im getting up now, feel really badtotally rejected that kinda me thing.
+RAT:   The SMS message appears to be a personal message expressing feelings of rejection and self-deprecation. There are no obvious signs of urgenc
+==============================================================================
+id=msg-00010 cond=clean pred=smishing true=smishing
+CLEAN: WELLS FARG O: Account temporarily locked. Visit use.app.link/wf
+DEOBF: wells farg o: account temporarily locked. visit use.app.link/wf
+RAT:   The SMS message appears to be a warning about a locked Wells Fargo account, which could be a legitimate notification from the bank. However,
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=urgency        claimed=YES  present=True   GROUNDED
+==============================================================================
+id=msg-00011 cond=clean pred=smishing true=smishing
+CLEAN: Dennis, July Tournament Pass $500 in Prizes Fortnite, LoL, SSBU Signup at ggsimplicity.com/tournaments Reply STOP
+DEOBF: dennis, july tournament pass $500 in prizes fortnite, lol, ssbu signup at ggsimplicity.com/tournaments reply stop
+RAT:   The SMS message appears to be a scam, as it contains several suspicious cues. The sender is asking for a signup at a suspicious-looking URL 
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=impersonation  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=personal_info  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=payment        claimed=YES  present=True   GROUNDED
+   cue=urgency        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+==============================================================================
+id=msg-00013 cond=clean pred=smishing true=smishing
+CLEAN: [I.R.S ] You will receive a tax refund of $573.00, but cannot process it due to incomplete personal information. Please confirm yo
+DEOBF: [i.r.s ] you will receive a tax refund of $573.00, but cannot process it due to incomplete personal information. please confirm yo
+RAT:   The SMS message appears to be a phishing attempt, as it contains several suspicious cues. The urgency to confirm personal information and th
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=impersonation  claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=True   GROUNDED
+   cue=urgency        claimed=YES  present=True   GROUNDED
+==============================================================================
+id=msg-00015 cond=clean pred=smishing true=smishing
+CLEAN: The USPS package has arrived at the warehouse and cannot be delivered due to incomplete address information. Please confirm your a
+DEOBF: the usps package has arrived at the warehouse and cannot be delivered due to incomplete address information. please confirm your a
+RAT:   The SMS message appears to be a phishing attempt, as it contains several suspicious cues. The urgency created by the 12-hour deadline is a c
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=True   GROUNDED
+   cue=urgency        claimed=YES  present=True   GROUNDED
+==============================================================================
+id=msg-00016 cond=clean pred=smishing true=smishing
+CLEAN: This is CJ with POR. Please take a moment to complete this survey about politics in San Diego: https://www.surveymonkey.com/r/F8VL
+DEOBF: this is cj with por. please take a moment to complete this survey about politics in san diego: https://www.surveymonkey.com/r/f8vl
+RAT:   The SMS message appears to be a form of smishing (SMS phishing). The evidence for this classification includes the following suspicious cues
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=impersonation  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=personal_info  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=payment        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=urgency        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+==============================================================================
+id=msg-00017 cond=clean pred=ham true=ham
+CLEAN: I tagged MY friends that you seemed to count as YOUR friends.
+DEOBF: i tagged my friends that you seemed to count as your friends.
+RAT:   The SMS message in question appears to be a benign message, as it does not contain any explicit requests for personal information, payment, 
+==============================================================================
+id=msg-00018 cond=clean pred=smishing true=smishing
+CLEAN: We regret to inform you that your Netflix membership has been placed on hold due to issues with your billing information. We kindl
+DEOBF: we regret to inform you that your netflix membership has been placed on hold due to issues with your billing information. we kindl
+RAT:   The SMS message appears to be a phishing attempt, as it contains several suspicious cues. The message is urgent, asking the recipient to upd
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=True   GROUNDED
+   cue=payment        claimed=YES  present=True   GROUNDED
+   cue=urgency        claimed=YES  present=True   GROUNDED
+==============================================================================
+id=msg-00021 cond=clean pred=ham true=ham
+CLEAN: Does cinema plus drink appeal tomo? * Is a fr thriller by director i like on at mac at 8.30.
+DEOBF: does cinema plus drink appeal tomo? * is a fr thriller by director i like on at mac at 8.30.
+RAT:   The SMS message appears to be a casual conversation between friends discussing a movie and a drink. There are no urgent requests, suspicious
+==============================================================================
+id=msg-00022 cond=clean pred=smishing true=smishing
+CLEAN: Welcome to join our BtC discussion Study Group, where you can learn to earn 500-5000 per day, Please click whatsapp://chat/?code=1
+DEOBF: welcome to join our btc discussion study group, where you can learn to earn 5005000 per day, please click whatsapp://chat/?code=15
+RAT:   The SMS message appears to be a scam. It contains several suspicious cues: 
+
+1. The offer of earning a large sum of money daily is too good 
+   cue=link           claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=impersonation  claimed=YES  present=True   GROUNDED
+   cue=payment        claimed=YES  present=True   GROUNDED
+==============================================================================
+id=msg-00023 cond=clean pred=smishing true=smishing
+CLEAN: 16182177551 Deposited a new message: "The fresh start programs and eliminating about 90 to 95% of your current debt amount. Please
+DEOBF: 16182177551 deposited a new message: "the fresh start programs and eliminating about 90 to 95% of your current debt amount. please
+RAT:   The SMS message appears to be a promotional message for a debt relief program, which is a common tactic used in smishing scams. The urgency 
+   cue=link           claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=impersonation  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=urgency        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+==============================================================================
+id=msg-00026 cond=clean pred=smishing true=smishing
+CLEAN: Verizon You've won a prize! Go to bit.ly/yourprize001 to claim your $500 Amazon gift card
+DEOBF: verizon you've won a prize! go to bit.ly/yourprize001 to claim your $500 amazon gift card
+RAT:   The SMS message claims that the recipient has won a prize and directs them to a link to claim a $500 Amazon gift card. This message contains
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=payment        claimed=YES  present=True   GROUNDED
+   cue=urgency        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+==============================================================================
+id=msg-00027 cond=clean pred=smishing true=smishing
+CLEAN: confirm your information in the link. https://irs.gov.direct-paying.com (Please reply "y", then exit the SMS, open the SMS activat
+DEOBF: confirm your information in the link. https://irs.gov.directpaying.com (please reply "y", then exit the sms, open the sms activati
+RAT:   The SMS message contains a suspicious link (https://irs.gov.direct-paying.com) that does not appear to be a legitimate IRS website. Addition
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=impersonation  claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=True   GROUNDED
+   cue=payment        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+==============================================================================
+id=msg-00029 cond=clean pred=smishing true=ham
+CLEAN: Hello which the site to download songs its urgent pls
+DEOBF: hello which the site to download songs its urgent pls
+RAT:   The SMS message is suspicious because it uses an urgent tone ("it's urgent pls") and asks the recipient to visit a website, which is a commo
+   cue=link           claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=impersonation  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=personal_info  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=urgency        claimed=YES  present=True   GROUNDED
+==============================================================================
+id=msg-00030 cond=clean pred=smishing true=smishing
+CLEAN: Your EDD (UI online) account needs urgent attention due to some irregular activities. Your account will be restricted if not verif
+DEOBF: your edd (ui online) account needs urgent attention due to some irregular activities. your account will be restricted if not verif
+RAT:   The SMS message appears to be a phishing attempt, as it contains several suspicious cues. The message creates a sense of urgency by stating 
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=impersonation  claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=True   GROUNDED
+   cue=payment        claimed=YES  present=True   GROUNDED
+   cue=urgency        claimed=YES  present=True   GROUNDED
+==============================================================================
+id=msg-00031 cond=clean pred=smishing true=ham
+CLEAN: U in town alone?
+DEOBF: u in town alone?
+RAT:   The SMS message "U in town alone?" could potentially be a smishing attempt, as it seems to be a suspicious and unsolicited message asking fo
+   cue=personal_info  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+==============================================================================
+id=msg-00032 cond=clean pred=smishing true=smishing
+CLEAN: Hey, it's John here, I'm having a hard time delivering your parcel. Please fill in the missing details here: zskuyyd.com/aj4BdNxG
+DEOBF: hey, it's john here, i'm having a hard time delivering your parcel. please fill in the missing details here: zskuyyd.com/aj4bdnxg
+RAT:   The SMS message appears to be a request for personal information, specifically asking the recipient to fill in details on a suspicious websi
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=True   GROUNDED
+   cue=urgency        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+==============================================================================
+id=msg-00033 cond=clean pred=ham true=ham
+CLEAN: Was doing my test earlier. I appreciate you. Will call you tomorrow.
+DEOBF: was doing my test earlier. i appreciate you. will call you tomorrow.
+RAT:   The SMS message provided does not contain any clear indicators of smishing, such as urgency, suspicious links, brand impersonation, or reque
+==============================================================================
+id=msg-00034 cond=clean pred=ham true=ham
+CLEAN: Are your freezing ? Are you home yet ? Will you remember to kiss your mom in the morning? Do you love me ? Do you think of me ? Ar
+DEOBF: are your freezing ? are you home yet ? will you remember to kiss your mom in the morning? do you love me ? do you think of me ? ar
+RAT:   The SMS message appears to be a series of affectionate and personal questions, which could be interpreted as a genuine conversation between 
+==============================================================================
+id=msg-00035 cond=clean pred=ham true=ham
+CLEAN: Hello handsome ! Are you finding that job ? Not being lazy ? Working towards getting back that net for mummy ? Where's my boytoy n
+DEOBF: hello handsome ! are you finding that job ? not being lazy ? working towards getting back that net for mummy ? where's my boytoy n
+RAT:   The SMS message appears to be a playful and affectionate message, possibly from a friend or family member. There are no clear signs of urgen
+==============================================================================
+id=msg-00036 cond=clean pred=ham true=smishing
+CLEAN: Test our new-formula cream for 7 days and your friends won't believe it's you. Real lifting! idwaxp51og.co/a09c Reply Stop to OPTO
+DEOBF: test our newformula cream for 7 days and your friends won't believe it's you. real lifting! idwaxp51og.co/a09c reply stop to optou
+RAT:   The SMS message appears to be a promotional offer for a new-formula cream, which could be considered a legitimate marketing message. There a
+==============================================================================
+id=msg-00037 cond=clean pred=smishing true=ham
+CLEAN: K.:)do it at evening da:)urgent:)
+DEOBF: k.:)do it at evening da:)urgent:)
+RAT:   The SMS message "K.:)do it at evening da:)urgent:)" is suspicious due to the use of multiple smileys and the word "urgent," which are often 
+   cue=urgency        claimed=YES  present=True   GROUNDED
+==============================================================================
+id=msg-00038 cond=clean pred=ham true=smishing
+CLEAN: This is a gift to express our gratitude for your exceptional payment record. Merry Christmas! T Mobile rlwrr.info/d4csZAeztK
+DEOBF: this is a gift to express our gratitude for your exceptional payment record. merry christmas! t mobile rlwrr.info/d4cszaeztk
+RAT:   The SMS message appears to be a promotional message from T-Mobile, which is a legitimate company. It thanks the recipient for their payment 
+==============================================================================
+id=msg-00039 cond=clean pred=ham true=ham
+CLEAN: Dunno dat's wat he told me. Ok lor...
+DEOBF: dunno dat's wat he told me. ok lor...
+RAT:   The SMS message provided is vague and lacks context, making it difficult to definitively classify it as either smishing or ham. However, the
+==============================================================================
+id=msg-00040 cond=clean pred=ham true=ham
+CLEAN: You are a great role model. You are giving so much and i really wish each day for a miracle but God as a reason for everything and
+DEOBF: you are a great role model. you are giving so much and i really wish each day for a miracle but god as a reason for everything and
+RAT:   The SMS message appears to be a personal and heartfelt message, expressing admiration and a desire for a miracle. There are no urgent reques
+==============================================================================
+id=msg-00041 cond=clean pred=smishing true=smishing
+CLEAN: Lowe's retail company would like your help on this official questionnaire, Anybody that enters this are to receive a no cost produ
+DEOBF: lowe's retail company would like your help on this official questionnaire, anybody that enters this are to receive a no cost produ
+RAT:   The SMS message appears to be a solicitation for participation in an official Lowe's retail company survey, promising a no-cost product in r
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=impersonation  claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=payment        claimed=YES  present=True   GROUNDED
+==============================================================================
+id=msg-00042 cond=clean pred=smishing true=smishing
+CLEAN: #NavyFed: $870 withdrawn at ATMSW-2. To dispute, go to bit.ly/navyauth
+DEOBF: #navyfed: $870 withdrawn at atmsw2. to dispute, go to bit.ly/navyauth
+RAT:   The SMS message appears to be a form of smishing (SMS phishing). The evidence for this classification includes the use of a hashtag (#NavyFe
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=payment        claimed=YES  present=True   GROUNDED
+   cue=urgency        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+==============================================================================
+id=msg-00044 cond=clean pred=ham true=ham
+CLEAN: What time you thinkin of goin?
+DEOBF: what time you thinkin of goin?
+RAT:   The SMS message "What time you thinkin of goin?" is a casual and informal way of asking someone about their plans. There are no clear indica
+==============================================================================
+id=msg-00045 cond=clean pred=smishing true=smishing
+CLEAN: NewDriving Rules: Esther CA Motorists are worried : chl8vo.com/ykrrb Reply Stop to Stop
+DEOBF: newdriving rules: esther ca motorists are worried : chl8vo.com/ykrrb reply stop to stop
+RAT:   The SMS message appears to be a form of smishing (SMS phishing) due to several suspicious cues. Firstly, the sender uses a misspelled domain
+   cue=impersonation  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=urgency        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+==============================================================================
+id=msg-00046 cond=clean pred=smishing true=ham
+CLEAN: Don't fret. I'll buy the ovulation test strips and send them to you. You wont get them til like march. Can you send me your postal
+DEOBF: don't fret. i'll buy the ovulation test strips and send them to you. you wont get them til like march. can you send me your postal
+RAT:   The SMS message appears to be a scam. It uses a sense of urgency and a request for personal information (postal address) to trick the recipi
+   cue=impersonation  claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=True   GROUNDED
+   cue=payment        claimed=YES  present=True   GROUNDED
+   cue=urgency        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+==============================================================================
+id=msg-00047 cond=clean pred=smishing true=smishing
+CLEAN: The USPS pack-age has arrived at the warehouse and cannot be deliv-ered due to incom-plete address in- formation. Please confirm y
+DEOBF: the usps package has arrived at the warehouse and cannot be delivered due to incomplete address information. please confirm your a
+RAT:   The SMS message appears to be a form of smishing (SMS phishing). The evidence for this classification includes:
+
+1. **Urgency**: The message
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=True   GROUNDED
+   cue=urgency        claimed=YES  present=True   GROUNDED
+==============================================================================
+id=msg-00048 cond=clean pred=smishing true=smishing
+CLEAN: FRM:esmlfl-UPS-2 MSG:803-We tried to deliver your parcel today but you weren't in or there was no safe place to leave it e103c-ups
+DEOBF: frm:esmlflups2 msg:803we tried to deliver your parcel today but you weren't in or there was no safe place to leave it e103cups.com
+RAT:   The SMS message appears to be a form of smishing (SMS phishing). The evidence for this classification includes the following suspicious cues
+   cue=link           claimed=YES  present=True   GROUNDED
+   cue=impersonation  claimed=YES  present=True   GROUNDED
+   cue=personal_info  claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=urgency        claimed=YES  present=True   GROUNDED
+==============================================================================
+id=msg-00049 cond=clean pred=smishing true=ham
+CLEAN: Sorry i cant take your call right now. It so happens that there r 2waxsto do wat you want. She can come and ill get her medical in
+DEOBF: sorry i cant take your call right now. it so happens that there r 2waxsto do wat you want. she can come and ill get her medical in
+RAT:   The SMS message appears to be a scam. It contains several suspicious cues, such as the urgency to act quickly ("till friday morning"), the r
+   cue=personal_info  claimed=YES  present=True   GROUNDED
+   cue=payment        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+   cue=urgency        claimed=YES  present=False   >>> UNSUPPORTED (fabricated)
+==============================================================================
+[summary] 40 rationales | claimed=90 | unsupported=36 (40.0% of claimed)

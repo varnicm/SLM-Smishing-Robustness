@@ -1,0 +1,243 @@
+[data] 242796 explanation-template rows
+[eligible] 179910 both-correct pairs; 19586 excluded for an empty rationale; 160324 scored
+Loading weights:   0%|          | 0/389 [00:00<?, ?it/s]Loading weights: 100%|██████████| 389/389 [00:00<00:00, 33152.85it/s]
+[transformers] [1mRobertaModel LOAD REPORT[0m from: roberta-large
+Key                       | Status     | 
+--------------------------+------------+-
+lm_head.bias              | UNEXPECTED | 
+lm_head.dense.weight      | UNEXPECTED | 
+lm_head.layer_norm.weight | UNEXPECTED | 
+lm_head.layer_norm.bias   | UNEXPECTED | 
+lm_head.dense.bias        | UNEXPECTED | 
+pooler.dense.weight       | MISSING    | 
+pooler.dense.bias         | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[bertscore] 160324 pairs | roberta-large layer=17 batch=32 (streaming)
+  [bertscore] 32/160324
+  [bertscore] 1632/160324
+  [bertscore] 3232/160324
+  [bertscore] 4832/160324
+  [bertscore] 6432/160324
+  [bertscore] 8032/160324
+  [bertscore] 9632/160324
+  [bertscore] 11232/160324
+  [bertscore] 12832/160324
+  [bertscore] 14432/160324
+  [bertscore] 16032/160324
+  [bertscore] 17632/160324
+  [bertscore] 19232/160324
+  [bertscore] 20832/160324
+  [bertscore] 22432/160324
+  [bertscore] 24032/160324
+  [bertscore] 25632/160324
+  [bertscore] 27232/160324
+  [bertscore] 28832/160324
+  [bertscore] 30432/160324
+  [bertscore] 32032/160324
+  [bertscore] 33632/160324
+  [bertscore] 35232/160324
+  [bertscore] 36832/160324
+  [bertscore] 38432/160324
+  [bertscore] 40032/160324
+  [bertscore] 41632/160324
+  [bertscore] 43232/160324
+  [bertscore] 44832/160324
+  [bertscore] 46432/160324
+  [bertscore] 48032/160324
+  [bertscore] 49632/160324
+  [bertscore] 51232/160324
+  [bertscore] 52832/160324
+  [bertscore] 54432/160324
+  [bertscore] 56032/160324
+  [bertscore] 57632/160324
+  [bertscore] 59232/160324
+  [bertscore] 60832/160324
+  [bertscore] 62432/160324
+  [bertscore] 64032/160324
+  [bertscore] 65632/160324
+  [bertscore] 67232/160324
+  [bertscore] 68832/160324
+  [bertscore] 70432/160324
+  [bertscore] 72032/160324
+  [bertscore] 73632/160324
+  [bertscore] 75232/160324
+  [bertscore] 76832/160324
+  [bertscore] 78432/160324
+  [bertscore] 80032/160324
+  [bertscore] 81632/160324
+  [bertscore] 83232/160324
+  [bertscore] 84832/160324
+  [bertscore] 86432/160324
+  [bertscore] 88032/160324
+  [bertscore] 89632/160324
+  [bertscore] 91232/160324
+  [bertscore] 92832/160324
+  [bertscore] 94432/160324
+  [bertscore] 96032/160324
+  [bertscore] 97632/160324
+  [bertscore] 99232/160324
+  [bertscore] 100832/160324
+  [bertscore] 102432/160324
+  [bertscore] 104032/160324
+  [bertscore] 105632/160324
+  [bertscore] 107232/160324
+  [bertscore] 108832/160324
+  [bertscore] 110432/160324
+  [bertscore] 112032/160324
+  [bertscore] 113632/160324
+  [bertscore] 115232/160324
+  [bertscore] 116832/160324
+  [bertscore] 118432/160324
+  [bertscore] 120032/160324
+  [bertscore] 121632/160324
+  [bertscore] 123232/160324
+  [bertscore] 124832/160324
+  [bertscore] 126432/160324
+  [bertscore] 128032/160324
+  [bertscore] 129632/160324
+  [bertscore] 131232/160324
+  [bertscore] 132832/160324
+  [bertscore] 134432/160324
+  [bertscore] 136032/160324
+  [bertscore] 137632/160324
+  [bertscore] 139232/160324
+  [bertscore] 140832/160324
+  [bertscore] 142432/160324
+  [bertscore] 144032/160324
+  [bertscore] 145632/160324
+  [bertscore] 147232/160324
+  [bertscore] 148832/160324
+  [bertscore] 150432/160324
+  [bertscore] 152032/160324
+  [bertscore] 153632/160324
+  [bertscore] 155232/160324
+  [bertscore] 156832/160324
+  [bertscore] 158432/160324
+  [bertscore] 160032/160324
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 9351.95it/s]
+[sentcos] 160324 pairs | sentence-transformers/all-MiniLM-L6-v2
+[write] outputs/analysis_stability_fixed/explanation_stability.txt
+============================================================================================
+DIMENSION 2 - EXPLANATION STABILITY
+============================================================================================
+
+Textual similarity between the rationale on the CLEAN message and the rationale
+on the PERTURBED message. Computed ONLY on pairs the model classifies correctly
+in BOTH forms, which CONTROLS FOR prediction correctness.
+
+This measures STABILITY - not faithfulness, correctness, or grounding.
+A rationale can be perfectly stable and still be wrong.
+
+PRIMARY  : BERTScore F1 (semantic, paraphrase-robust)
+SECONDARY: ROUGE-L (ordered overlap); token-Jaccard (lexical set overlap)
+
+--------------------------------------------------------------------------------------------
+(A) ELIGIBILITY - pairs correctly classified in BOTH clean and perturbed form.
+    A model with a SMALL eligible set may look stable only because its eligible
+    cases are the easy ones. Read table (B) against this.
+--------------------------------------------------------------------------------------------
+model                        attack         eligible      total     rate
+Qwen3.5-4B                   character          9384      10678    87.9%
+Qwen3.5-4B                   multi              4188       4530    92.5%
+Qwen3.5-4B                   sentence           9125       9822    92.9%
+Qwen3.5-4B                   word              10156      11222    90.5%
+Qwen3.5-4B                   ALL               32853      36252    90.6%
+
+Qwen3.5-9B                   character          8321      10678    77.9%
+Qwen3.5-9B                   multi              4021       4530    88.8%
+Qwen3.5-9B                   sentence           8716       9822    88.7%
+Qwen3.5-9B                   word               9131      11222    81.4%
+Qwen3.5-9B                   ALL               30189      36252    83.3%
+
+gemma-4-E4B-it               character          9902      10678    92.7%
+gemma-4-E4B-it               multi              4253       4530    93.9%
+gemma-4-E4B-it               sentence           9316       9822    94.8%
+gemma-4-E4B-it               word              10463      11222    93.2%
+gemma-4-E4B-it               ALL               33934      36252    93.6%
+
+Llama-3.1-8B-Instruct        character          8547      10678    80.0%
+Llama-3.1-8B-Instruct        multi              3878       4530    85.6%
+Llama-3.1-8B-Instruct        sentence           8385       9822    85.4%
+Llama-3.1-8B-Instruct        word               9591      11222    85.5%
+Llama-3.1-8B-Instruct        ALL               30401      36252    83.9%
+
+Llama-3.2-3B-Instruct        character          7070      10678    66.2%
+Llama-3.2-3B-Instruct        multi              3448       4530    76.1%
+Llama-3.2-3B-Instruct        sentence           6830       9822    69.5%
+Llama-3.2-3B-Instruct        word               7861      11222    70.0%
+Llama-3.2-3B-Instruct        ALL               25209      36252    69.5%
+
+Phi-4-mini-instruct          character          7668      10678    71.8%
+Phi-4-mini-instruct          multi              3571       4530    78.8%
+Phi-4-mini-instruct          sentence           7636       9822    77.7%
+Phi-4-mini-instruct          word               8449      11222    75.3%
+Phi-4-mini-instruct          ALL               27324      36252    75.4%
+
+--------------------------------------------------------------------------------------------
+(A2) INSTRUCTION COMPLIANCE - pairs DROPPED because a rationale was empty.
+     A bare 'FINAL: smishing' with no rationale is not an explanation. Scoring
+     the similarity of two empty strings measures nothing, so such pairs are
+     excluded. A HIGH exclusion rate is a finding in its own right: the model is
+     ignoring the explanation instruction, NOT producing unstable explanations.
+--------------------------------------------------------------------------------------------
+model                        template                     dropped        of     rate
+Qwen3.5-4B                   t3_neutral_explanation             0     16742     0.0%
+Qwen3.5-4B                   t4_expert_explanation              0     16111     0.0%
+Qwen3.5-4B                   ALL                                0     32853     0.0%
+
+Qwen3.5-9B                   t3_neutral_explanation             0     15221     0.0%
+Qwen3.5-9B                   t4_expert_explanation              0     14968     0.0%
+Qwen3.5-9B                   ALL                                0     30189     0.0%
+
+gemma-4-E4B-it               t3_neutral_explanation             0     17041     0.0%
+gemma-4-E4B-it               t4_expert_explanation              0     16893     0.0%
+gemma-4-E4B-it               ALL                                0     33934     0.0%
+
+Llama-3.1-8B-Instruct        t3_neutral_explanation         13754     15893    86.5%
+Llama-3.1-8B-Instruct        t4_expert_explanation           4558     14508    31.4%
+Llama-3.1-8B-Instruct        ALL                            18312     30401    60.2%
+
+Llama-3.2-3B-Instruct        t3_neutral_explanation            18     12691     0.1%
+Llama-3.2-3B-Instruct        t4_expert_explanation             70     12518     0.6%
+Llama-3.2-3B-Instruct        ALL                               88     25209     0.3%
+
+Phi-4-mini-instruct          t3_neutral_explanation           837     13603     6.2%
+Phi-4-mini-instruct          t4_expert_explanation            349     13721     2.5%
+Phi-4-mini-instruct          ALL                             1186     27324     4.3%
+
+--------------------------------------------------------------------------------------------
+(B) STABILITY by model (pooled over templates and attacks)
+--------------------------------------------------------------------------------------------
+model                               n  BERTScore   SentCos   ROUGE-L   Jaccard
+Qwen3.5-4B                      32853      0.901     0.819     0.356     0.306
+Qwen3.5-9B                      30189      0.903     0.828     0.361     0.313
+gemma-4-E4B-it                  33934      0.916     0.824     0.428     0.360
+Llama-3.1-8B-Instruct           12089      0.927     0.895     0.500     0.417
+Llama-3.2-3B-Instruct           25121      0.935     0.892     0.544     0.465
+Phi-4-mini-instruct             26138      0.919     0.858     0.442     0.395
+
+--------------------------------------------------------------------------------------------
+(C) STABILITY by model x attack   (values = BERTScore F1)
+--------------------------------------------------------------------------------------------
+model                          character       multi    sentence        word
+Qwen3.5-4B                         0.898       0.894       0.902       0.905
+Qwen3.5-9B                         0.901       0.896       0.904       0.907
+gemma-4-E4B-it                     0.914       0.908       0.915       0.922
+Llama-3.1-8B-Instruct              0.926       0.915       0.923       0.934
+Llama-3.2-3B-Instruct              0.933       0.925       0.933       0.942
+Phi-4-mini-instruct                0.921       0.905       0.914       0.926
+
+--------------------------------------------------------------------------------------------
+(D) STABILITY by model x template (does role framing shift the rationale?)
+--------------------------------------------------------------------------------------------
+model                           t3_neutral_explanation     t4_expert_explanation
+Qwen3.5-4B                                       0.902                     0.900
+Qwen3.5-9B                                       0.904                     0.902
+gemma-4-E4B-it                                   0.917                     0.915
+Llama-3.1-8B-Instruct                            0.926                     0.927
+Llama-3.2-3B-Instruct                            0.935                     0.935
+Phi-4-mini-instruct                              0.919                     0.918
+

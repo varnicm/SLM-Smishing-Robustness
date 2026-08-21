@@ -1,0 +1,22 @@
+CUDA visible in job: True | devices: 1
+[load] counter-fitted vectors from data/counter-fitted-vectors.txt
+[load] PEGASUS will load on first sentence/multi attack
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 13138.69it/s]
+[data] 2110 messages | attacks=['character', 'word', 'sentence', 'multi'] | seeds=[0, 1, 2]
+[done] attack=character seed=0
+[done] attack=character seed=1
+[done] attack=character seed=2
+[done] attack=word seed=0
+[done] attack=word seed=1
+[done] attack=word seed=2
+Loading weights:   0%|          | 0/678 [00:00<?, ?it/s]Loading weights:  43%|████▎     | 293/678 [00:00<00:00, 2920.44it/s]Loading weights: 100%|██████████| 678/678 [00:00<00:00, 4422.51it/s]
+[transformers] [1mPegasusForConditionalGeneration LOAD REPORT[0m from: tuner007/pegasus_paraphrase
+Key                                  | Status  | 
+-------------------------------------+---------+-
+model.encoder.embed_positions.weight | MISSING | 
+model.decoder.embed_positions.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+slurmstepd-gpunode004: error: *** JOB 611166 ON gpunode004 CANCELLED AT 2026-07-08T18:07:36 ***

@@ -1,0 +1,21 @@
+Loading weights:   0%|          | 0/394 [00:00<?, ?it/s]Loading weights: 100%|██████████| 394/394 [00:00<00:00, 33151.90it/s]
+Phi-4-mini-i pred=smishing p_entail=0.950
+Phi-4-mini-i pred=smishing p_entail=0.937
+Phi-4-mini-i pred=smishing p_entail=0.995
+Phi-4-mini-i pred=smishing p_entail=0.987
+Phi-4-mini-i pred=smishing p_entail=0.991
+Phi-4-mini-i pred=smishing p_entail=0.988
+Phi-4-mini-i pred=ham      p_entail=0.996
+Phi-4-mini-i pred=smishing p_entail=0.949
+Phi-4-mini-i pred=ham      p_entail=0.994
+Phi-4-mini-i pred=smishing p_entail=0.908
+Phi-4-mini-i pred=smishing p_entail=0.989
+Phi-4-mini-i pred=smishing p_entail=0.993
+Phi-4-mini-i pred=smishing p_entail=0.994
+Phi-4-mini-i pred=smishing p_entail=0.944
+Phi-4-mini-i pred=smishing p_entail=0.997
+Phi-4-mini-i pred=smishing p_entail=0.992
+Phi-4-mini-i pred=ham      p_entail=0.994
+Phi-4-mini-i pred=ham      p_entail=0.997
+Phi-4-mini-i pred=smishing p_entail=0.991
+Phi-4-mini-i pred=smishing p_entail=0.729

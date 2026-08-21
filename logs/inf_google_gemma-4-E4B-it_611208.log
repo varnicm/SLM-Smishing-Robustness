@@ -1,0 +1,6 @@
+CUDA: True
+[data] 18126 valid perturbed | 2107 unique clean msgs
+[plan] 1 models x 4 templates
+[model] loading google/gemma-4-E4B-it
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+slurmstepd-gpunode004: error: *** JOB 611208 ON gpunode004 CANCELLED AT 2026-07-09T08:19:34 ***

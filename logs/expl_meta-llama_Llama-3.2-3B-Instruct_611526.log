@@ -1,0 +1,9 @@
+[data] 18126 valid perturbed | 2107 unique clean msgs
+[plan] 1 models x 2 templates | batch_size=16
+[model] loading meta-llama/Llama-3.2-3B-Instruct
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]Loading weights:   0%|          | 1/254 [00:00<02:38,  1.60it/s]Loading weights:  35%|███▌      | 90/254 [00:00<00:01, 162.96it/s]Loading weights:  54%|█████▍    | 137/254 [00:01<00:00, 149.73it/s]Loading weights:  67%|██████▋   | 169/254 [00:01<00:00, 145.03it/s]Loading weights:  76%|███████▋  | 194/254 [00:01<00:00, 150.83it/s]Loading weights:  85%|████████▌ | 216/254 [00:01<00:00, 149.74it/s]Loading weights:  93%|█████████▎| 236/254 [00:01<00:00, 150.98it/s]Loading weights: 100%|██████████| 254/254 [00:01<00:00, 138.39it/s]
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+[done] meta-llama/Llama-3.2-3B-Instruct / t3_neutral_explanation
+[done] meta-llama/Llama-3.2-3B-Instruct / t4_expert_explanation
+[model] meta-llama/Llama-3.2-3B-Instruct finished in 13769s
+[write] predictions -> outputs/preds_expl_meta-llama_Llama-3.2-3B-Instruct.jsonl

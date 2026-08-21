@@ -1,0 +1,19 @@
+[load] 242796 explanation rows (t3/t4)
+Loading weights:   0%|          | 0/389 [00:00<?, ?it/s]Loading weights:   9%|▉         | 36/389 [00:00<00:02, 163.24it/s]Loading weights:  46%|████▌     | 177/389 [00:00<00:00, 604.59it/s]Loading weights: 100%|██████████| 389/389 [00:00<00:00, 994.57it/s]
+[transformers] [1mRobertaModel LOAD REPORT[0m from: roberta-large
+Key                       | Status     | 
+--------------------------+------------+-
+lm_head.dense.weight      | UNEXPECTED | 
+lm_head.layer_norm.bias   | UNEXPECTED | 
+lm_head.dense.bias        | UNEXPECTED | 
+lm_head.layer_norm.weight | UNEXPECTED | 
+lm_head.bias              | UNEXPECTED | 
+pooler.dense.bias         | MISSING    | 
+pooler.dense.weight       | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1952.40it/s]
+/var/spool/slurm/d/job616141/slurm_script: line 4: 1457604 Killed                  python scripts/analyze_explanation.py --preds outputs/expl_all.jsonl --out-dir outputs/analysis/dim2 --bertscore --sentcos --rougel --min-chars 10 --seed 0
+slurmstepd-gpunode003: error: Detected 1 oom_kill event in StepId=616141.batch. Some of the step tasks have been OOM Killed.

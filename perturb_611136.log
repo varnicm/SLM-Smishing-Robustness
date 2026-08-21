@@ -1,0 +1,14 @@
+[load] counter-fitted vectors from data/counter-fitted-vectors.txt
+[load] PEGASUS will load on first sentence/multi attack
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 34022.15it/s]
+[data] 2110 messages | attacks=['character', 'word', 'sentence', 'multi'] | seeds=[0, 1, 2]
+[done] attack=character seed=0
+[done] attack=character seed=1
+[done] attack=character seed=2
+[done] attack=word seed=0
+[done] attack=word seed=1
+[done] attack=word seed=2
+/var/spool/slurm/d/job611136/slurm_script: line 40: 3344134 Killed                  python scripts/run_perturbations.py --input data/smishtank_clean.csv --output outputs/smishtank_perturbed.jsonl --counter-fitted "$CF" --frac 0.30 --seeds 0 1 2 --sim-threshold 0.70 --attacks character word sentence multi --device cuda
+[done] perturbation pipeline finished
+slurmstepd-gpunode007: error: Detected 1 oom_kill event in StepId=611136.batch. Some of the step tasks have been OOM Killed.

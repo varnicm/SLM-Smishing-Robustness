@@ -1,0 +1,178 @@
+[data] 242796 explanation-template rows
+[eligible] 179910 both-correct rationale pairs
+Loading weights:   0%|          | 0/389 [00:00<?, ?it/s]Loading weights: 100%|██████████| 389/389 [00:00<00:00, 33322.12it/s]
+[transformers] [1mRobertaModel LOAD REPORT[0m from: roberta-large
+Key                       | Status     | 
+--------------------------+------------+-
+lm_head.layer_norm.weight | UNEXPECTED | 
+lm_head.layer_norm.bias   | UNEXPECTED | 
+lm_head.dense.weight      | UNEXPECTED | 
+lm_head.bias              | UNEXPECTED | 
+lm_head.dense.bias        | UNEXPECTED | 
+pooler.dense.bias         | MISSING    | 
+pooler.dense.weight       | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[bertscore] 179910 pairs | roberta-large layer=17
+  [bertscore] embedded 64/179910
+  [bertscore] embedded 1344/179910
+  [bertscore] embedded 2624/179910
+  [bertscore] embedded 3904/179910
+  [bertscore] embedded 5184/179910
+  [bertscore] embedded 6464/179910
+  [bertscore] embedded 7744/179910
+  [bertscore] embedded 9024/179910
+  [bertscore] embedded 10304/179910
+  [bertscore] embedded 11584/179910
+  [bertscore] embedded 12864/179910
+  [bertscore] embedded 14144/179910
+  [bertscore] embedded 15424/179910
+  [bertscore] embedded 16704/179910
+  [bertscore] embedded 17984/179910
+  [bertscore] embedded 19264/179910
+  [bertscore] embedded 20544/179910
+  [bertscore] embedded 21824/179910
+  [bertscore] embedded 23104/179910
+  [bertscore] embedded 24384/179910
+  [bertscore] embedded 25664/179910
+  [bertscore] embedded 26944/179910
+  [bertscore] embedded 28224/179910
+  [bertscore] embedded 29504/179910
+  [bertscore] embedded 30784/179910
+  [bertscore] embedded 32064/179910
+  [bertscore] embedded 33344/179910
+  [bertscore] embedded 34624/179910
+  [bertscore] embedded 35904/179910
+  [bertscore] embedded 37184/179910
+  [bertscore] embedded 38464/179910
+  [bertscore] embedded 39744/179910
+  [bertscore] embedded 41024/179910
+  [bertscore] embedded 42304/179910
+  [bertscore] embedded 43584/179910
+  [bertscore] embedded 44864/179910
+  [bertscore] embedded 46144/179910
+  [bertscore] embedded 47424/179910
+  [bertscore] embedded 48704/179910
+  [bertscore] embedded 49984/179910
+  [bertscore] embedded 51264/179910
+  [bertscore] embedded 52544/179910
+  [bertscore] embedded 53824/179910
+  [bertscore] embedded 55104/179910
+  [bertscore] embedded 56384/179910
+  [bertscore] embedded 57664/179910
+  [bertscore] embedded 58944/179910
+  [bertscore] embedded 60224/179910
+  [bertscore] embedded 61504/179910
+  [bertscore] embedded 62784/179910
+  [bertscore] embedded 64064/179910
+  [bertscore] embedded 65344/179910
+  [bertscore] embedded 66624/179910
+  [bertscore] embedded 67904/179910
+  [bertscore] embedded 69184/179910
+  [bertscore] embedded 70464/179910
+  [bertscore] embedded 71744/179910
+  [bertscore] embedded 73024/179910
+  [bertscore] embedded 74304/179910
+  [bertscore] embedded 75584/179910
+  [bertscore] embedded 76864/179910
+  [bertscore] embedded 78144/179910
+  [bertscore] embedded 79424/179910
+  [bertscore] embedded 80704/179910
+  [bertscore] embedded 81984/179910
+  [bertscore] embedded 83264/179910
+  [bertscore] embedded 84544/179910
+[bertscore] failed: CUDA out of memory. Tried to allocate 240.00 MiB. GPU 0 has a total capacity of 39.49 GiB of which 212.50 MiB is free. Including non-PyTorch memory, this process has 39.28 GiB memory in use. Of the allocated memory 37.34 GiB is allocated by PyTorch, and 1.45 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 33714.17it/s]
+[sentcos] 179910 pairs | sentence-transformers/all-MiniLM-L6-v2
+[write] outputs/analysis_stability/explanation_stability.txt
+============================================================================================
+DIMENSION 2 - EXPLANATION STABILITY
+============================================================================================
+
+Textual similarity between the rationale on the CLEAN message and the rationale
+on the PERTURBED message. Computed ONLY on pairs the model classifies correctly
+in BOTH forms, which CONTROLS FOR prediction correctness.
+
+This measures STABILITY - not faithfulness, correctness, or grounding.
+A rationale can be perfectly stable and still be wrong.
+
+PRIMARY  : BERTScore F1 (semantic, paraphrase-robust)
+SECONDARY: ROUGE-L (ordered overlap); token-Jaccard (lexical set overlap)
+
+--------------------------------------------------------------------------------------------
+(A) ELIGIBILITY - pairs correctly classified in BOTH clean and perturbed form.
+    A model with a SMALL eligible set may look stable only because its eligible
+    cases are the easy ones. Read table (B) against this.
+--------------------------------------------------------------------------------------------
+model                        attack         eligible      total     rate
+Qwen3.5-4B                   character          9384      10678    87.9%
+Qwen3.5-4B                   multi              4188       4530    92.5%
+Qwen3.5-4B                   sentence           9125       9822    92.9%
+Qwen3.5-4B                   word              10156      11222    90.5%
+Qwen3.5-4B                   ALL               32853      36252    90.6%
+
+Qwen3.5-9B                   character          8321      10678    77.9%
+Qwen3.5-9B                   multi              4021       4530    88.8%
+Qwen3.5-9B                   sentence           8716       9822    88.7%
+Qwen3.5-9B                   word               9131      11222    81.4%
+Qwen3.5-9B                   ALL               30189      36252    83.3%
+
+gemma-4-E4B-it               character          9902      10678    92.7%
+gemma-4-E4B-it               multi              4253       4530    93.9%
+gemma-4-E4B-it               sentence           9316       9822    94.8%
+gemma-4-E4B-it               word              10463      11222    93.2%
+gemma-4-E4B-it               ALL               33934      36252    93.6%
+
+Llama-3.1-8B-Instruct        character          8547      10678    80.0%
+Llama-3.1-8B-Instruct        multi              3878       4530    85.6%
+Llama-3.1-8B-Instruct        sentence           8385       9822    85.4%
+Llama-3.1-8B-Instruct        word               9591      11222    85.5%
+Llama-3.1-8B-Instruct        ALL               30401      36252    83.9%
+
+Llama-3.2-3B-Instruct        character          7070      10678    66.2%
+Llama-3.2-3B-Instruct        multi              3448       4530    76.1%
+Llama-3.2-3B-Instruct        sentence           6830       9822    69.5%
+Llama-3.2-3B-Instruct        word               7861      11222    70.0%
+Llama-3.2-3B-Instruct        ALL               25209      36252    69.5%
+
+Phi-4-mini-instruct          character          7668      10678    71.8%
+Phi-4-mini-instruct          multi              3571       4530    78.8%
+Phi-4-mini-instruct          sentence           7636       9822    77.7%
+Phi-4-mini-instruct          word               8449      11222    75.3%
+Phi-4-mini-instruct          ALL               27324      36252    75.4%
+
+--------------------------------------------------------------------------------------------
+(B) STABILITY by model (pooled over templates and attacks)
+--------------------------------------------------------------------------------------------
+model                               n   SentCos   ROUGE-L   Jaccard
+Qwen3.5-4B                      32853     0.819     0.356     0.306
+Qwen3.5-9B                      30189     0.828     0.361     0.313
+gemma-4-E4B-it                  33934     0.824     0.428     0.360
+Llama-3.1-8B-Instruct           30401     0.835     0.199     0.624
+Llama-3.2-3B-Instruct           25209     0.889     0.542     0.463
+Phi-4-mini-instruct             27324     0.834     0.422     0.387
+
+--------------------------------------------------------------------------------------------
+(C) STABILITY by model x attack   (values = token-Jaccard)
+--------------------------------------------------------------------------------------------
+model                          character       multi    sentence        word
+Qwen3.5-4B                         0.310       0.276       0.294       0.326
+Qwen3.5-9B                         0.322       0.279       0.302       0.330
+gemma-4-E4B-it                     0.374       0.303       0.335       0.392
+Llama-3.1-8B-Instruct              0.621       0.572       0.611       0.658
+Llama-3.2-3B-Instruct              0.466       0.412       0.441       0.504
+Phi-4-mini-instruct                0.408       0.315       0.344       0.437
+
+--------------------------------------------------------------------------------------------
+(D) STABILITY by model x template (does role framing shift the rationale?)
+--------------------------------------------------------------------------------------------
+model                           t3_neutral_explanation     t4_expert_explanation
+Qwen3.5-4B                                       0.309                     0.303
+Qwen3.5-9B                                       0.316                     0.309
+gemma-4-E4B-it                                   0.368                     0.352
+Llama-3.1-8B-Instruct                            0.762                     0.472
+Llama-3.2-3B-Instruct                            0.467                     0.460
+Phi-4-mini-instruct                              0.385                     0.389
+

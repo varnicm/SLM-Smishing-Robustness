@@ -1,0 +1,4 @@
+[data] 242796 explanation-template rows
+Loading weights:   0%|          | 0/394 [00:00<?, ?it/s]Loading weights:  93%|█████████▎| 368/394 [00:00<00:00, 3678.77it/s]Loading weights: 100%|██████████| 394/394 [00:00<00:00, 3599.66it/s]
+[nli] cross-encoder/nli-deberta-v3-large id2label={0: 'contradiction', 1: 'entailment', 2: 'neutral'} entail_idx=1
+slurmstepd-gpunode004: error: *** JOB 611724 ON gpunode004 CANCELLED AT 2026-07-12T03:15:01 ***

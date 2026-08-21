@@ -1,0 +1,139 @@
+GOLD SET: 21 messages (11 urgent, 10 not)
+
+--- LEXICAL (current keyword list) ---
+  accuracy=0.86  precision=1.00  recall=0.73  (tp=8 fp=0 tn=10 fn=3)
+    MISSED   Hey, it's John here, I'm having a hard time delivering your parcel. Please fill 
+    MISSED   #NavyFed: $870 withdrawn at ATMSW-2. To dispute, go to bit.ly/navyauth
+    MISSED   Verizon You've won a prize! Go to bit.ly/yourprize001 to claim your $500 Amazon 
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 12749.73it/s]
+[transformers] [1mRobertaForSequenceClassification LOAD REPORT[0m from: roberta-large-mnli
+Key                         | Status     |  | 
+----------------------------+------------+--+-
+roberta.pooler.dense.bias   | UNEXPECTED |  | 
+roberta.pooler.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+
+--- NLI  thresh=0.5  hyp='This message creates a sense of urgency.' ---
+  accuracy=0.57  precision=1.00  recall=0.18  (tp=2 fp=0 tn=10 fn=9)
+    MISSED   [I.R.S] You will receive a tax refund of $573.00, but cannot process it due to i
+    MISSED   The USPS package has arrived at the warehouse and cannot be delivered due to inc
+    MISSED   Your EDD (UI online) account needs urgent attention due to some irregular activi
+    MISSED   Amazon.com We temporarily placed your Amazon suspended to Restore follow instruc
+    MISSED   WELLS FARG O: Account temporarily locked. Visit use.app.link/wf
+    MISSED   Hey, it's John here, I'm having a hard time delivering your parcel. Please fill 
+    MISSED   #NavyFed: $870 withdrawn at ATMSW-2. To dispute, go to bit.ly/navyauth
+    MISSED   Verizon You've won a prize! Go to bit.ly/yourprize001 to claim your $500 Amazon 
+    MISSED   We regret to inform you that your Netflix membership has been placed on hold due
+
+--- NLI  thresh=0.7  hyp='This message creates a sense of urgency.' ---
+  accuracy=0.48  precision=0.00  recall=0.00  (tp=0 fp=0 tn=10 fn=11)
+    MISSED   [I.R.S] You will receive a tax refund of $573.00, but cannot process it due to i
+    MISSED   The USPS package has arrived at the warehouse and cannot be delivered due to inc
+    MISSED   Your EDD (UI online) account needs urgent attention due to some irregular activi
+    MISSED   Amazon.com We temporarily placed your Amazon suspended to Restore follow instruc
+    MISSED   WELLS FARG O: Account temporarily locked. Visit use.app.link/wf
+    MISSED   Hey, it's John here, I'm having a hard time delivering your parcel. Please fill 
+    MISSED   #NavyFed: $870 withdrawn at ATMSW-2. To dispute, go to bit.ly/navyauth
+    MISSED   Verizon You've won a prize! Go to bit.ly/yourprize001 to claim your $500 Amazon 
+    MISSED   We regret to inform you that your Netflix membership has been placed on hold due
+    MISSED   Hello which the site to download songs its urgent pls
+    MISSED   K.:)do it at evening da:)urgent:)
+
+--- NLI  thresh=0.5  hyp='This message pressures the recipient to act quickly.' ---
+  accuracy=0.57  precision=1.00  recall=0.18  (tp=2 fp=0 tn=10 fn=9)
+    MISSED   [I.R.S] You will receive a tax refund of $573.00, but cannot process it due to i
+    MISSED   The USPS package has arrived at the warehouse and cannot be delivered due to inc
+    MISSED   Your EDD (UI online) account needs urgent attention due to some irregular activi
+    MISSED   Amazon.com We temporarily placed your Amazon suspended to Restore follow instruc
+    MISSED   WELLS FARG O: Account temporarily locked. Visit use.app.link/wf
+    MISSED   Hey, it's John here, I'm having a hard time delivering your parcel. Please fill 
+    MISSED   #NavyFed: $870 withdrawn at ATMSW-2. To dispute, go to bit.ly/navyauth
+    MISSED   Verizon You've won a prize! Go to bit.ly/yourprize001 to claim your $500 Amazon 
+    MISSED   We regret to inform you that your Netflix membership has been placed on hold due
+
+--- NLI  thresh=0.7  hyp='This message pressures the recipient to act quickly.' ---
+  accuracy=0.52  precision=1.00  recall=0.09  (tp=1 fp=0 tn=10 fn=10)
+    MISSED   [I.R.S] You will receive a tax refund of $573.00, but cannot process it due to i
+    MISSED   The USPS package has arrived at the warehouse and cannot be delivered due to inc
+    MISSED   Your EDD (UI online) account needs urgent attention due to some irregular activi
+    MISSED   Amazon.com We temporarily placed your Amazon suspended to Restore follow instruc
+    MISSED   WELLS FARG O: Account temporarily locked. Visit use.app.link/wf
+    MISSED   Hey, it's John here, I'm having a hard time delivering your parcel. Please fill 
+    MISSED   #NavyFed: $870 withdrawn at ATMSW-2. To dispute, go to bit.ly/navyauth
+    MISSED   Verizon You've won a prize! Go to bit.ly/yourprize001 to claim your $500 Amazon 
+    MISSED   We regret to inform you that your Netflix membership has been placed on hold due
+    MISSED   Hello which the site to download songs its urgent pls
+
+--- NLI  thresh=0.5  hyp='The message demands immediate action or has a deadline.' ---
+  accuracy=0.52  precision=0.67  recall=0.18  (tp=2 fp=1 tn=9 fn=9)
+    MISSED   [I.R.S] You will receive a tax refund of $573.00, but cannot process it due to i
+    MISSED   The USPS package has arrived at the warehouse and cannot be delivered due to inc
+    MISSED   Your EDD (UI online) account needs urgent attention due to some irregular activi
+    MISSED   Amazon.com We temporarily placed your Amazon suspended to Restore follow instruc
+    MISSED   WELLS FARG O: Account temporarily locked. Visit use.app.link/wf
+    MISSED   Hey, it's John here, I'm having a hard time delivering your parcel. Please fill 
+    MISSED   #NavyFed: $870 withdrawn at ATMSW-2. To dispute, go to bit.ly/navyauth
+    MISSED   Verizon You've won a prize! Go to bit.ly/yourprize001 to claim your $500 Amazon 
+    MISSED   We regret to inform you that your Netflix membership has been placed on hold due
+    FALSE+   Was doing my test earlier. I appreciate you. Will call you tomorrow.
+
+--- NLI  thresh=0.7  hyp='The message demands immediate action or has a deadline.' ---
+  accuracy=0.52  precision=1.00  recall=0.09  (tp=1 fp=0 tn=10 fn=10)
+    MISSED   [I.R.S] You will receive a tax refund of $573.00, but cannot process it due to i
+    MISSED   The USPS package has arrived at the warehouse and cannot be delivered due to inc
+    MISSED   Your EDD (UI online) account needs urgent attention due to some irregular activi
+    MISSED   Amazon.com We temporarily placed your Amazon suspended to Restore follow instruc
+    MISSED   WELLS FARG O: Account temporarily locked. Visit use.app.link/wf
+    MISSED   Hey, it's John here, I'm having a hard time delivering your parcel. Please fill 
+    MISSED   #NavyFed: $870 withdrawn at ATMSW-2. To dispute, go to bit.ly/navyauth
+    MISSED   Verizon You've won a prize! Go to bit.ly/yourprize001 to claim your $500 Amazon 
+    MISSED   We regret to inform you that your Netflix membership has been placed on hold due
+    MISSED   Hello which the site to download songs its urgent pls
+
+--- NLI  thresh=0.5  hyp='This message conveys urgency or time pressure.' ---
+  accuracy=0.57  precision=0.75  recall=0.27  (tp=3 fp=1 tn=9 fn=8)
+    MISSED   [I.R.S] You will receive a tax refund of $573.00, but cannot process it due to i
+    MISSED   The USPS package has arrived at the warehouse and cannot be delivered due to inc
+    MISSED   Amazon.com We temporarily placed your Amazon suspended to Restore follow instruc
+    MISSED   WELLS FARG O: Account temporarily locked. Visit use.app.link/wf
+    MISSED   Hey, it's John here, I'm having a hard time delivering your parcel. Please fill 
+    MISSED   #NavyFed: $870 withdrawn at ATMSW-2. To dispute, go to bit.ly/navyauth
+    MISSED   Verizon You've won a prize! Go to bit.ly/yourprize001 to claim your $500 Amazon 
+    MISSED   We regret to inform you that your Netflix membership has been placed on hold due
+    FALSE+   Sorry, I'll came to ur place later..
+
+--- NLI  thresh=0.7  hyp='This message conveys urgency or time pressure.' ---
+  accuracy=0.62  precision=1.00  recall=0.27  (tp=3 fp=0 tn=10 fn=8)
+    MISSED   [I.R.S] You will receive a tax refund of $573.00, but cannot process it due to i
+    MISSED   The USPS package has arrived at the warehouse and cannot be delivered due to inc
+    MISSED   Amazon.com We temporarily placed your Amazon suspended to Restore follow instruc
+    MISSED   WELLS FARG O: Account temporarily locked. Visit use.app.link/wf
+    MISSED   Hey, it's John here, I'm having a hard time delivering your parcel. Please fill 
+    MISSED   #NavyFed: $870 withdrawn at ATMSW-2. To dispute, go to bit.ly/navyauth
+    MISSED   Verizon You've won a prize! Go to bit.ly/yourprize001 to claim your $500 Amazon 
+    MISSED   We regret to inform you that your Netflix membership has been placed on hold due
+
+--- raw entailment probabilities (hyp: 'This message creates a sense of urgency.') ---
+  gold=URGENT  p_entail=0.003  [I.R.S] You will receive a tax refund of $573.00, but cannot proce
+  gold=URGENT  p_entail=0.003  The USPS package has arrived at the warehouse and cannot be delive
+  gold=URGENT  p_entail=0.186  Your EDD (UI online) account needs urgent attention due to some ir
+  gold=URGENT  p_entail=0.002  Amazon.com We temporarily placed your Amazon suspended to Restore 
+  gold=URGENT  p_entail=0.004  WELLS FARG O: Account temporarily locked. Visit use.app.link/wf
+  gold=URGENT  p_entail=0.008  Hey, it's John here, I'm having a hard time delivering your parcel
+  gold=URGENT  p_entail=0.005  #NavyFed: $870 withdrawn at ATMSW-2. To dispute, go to bit.ly/navy
+  gold=URGENT  p_entail=0.003  Verizon You've won a prize! Go to bit.ly/yourprize001 to claim you
+  gold=URGENT  p_entail=0.009  We regret to inform you that your Netflix membership has been plac
+  gold=not     p_entail=0.007  This is CJ with POR. Please take a moment to complete this survey 
+  gold=not     p_entail=0.012  Dennis, July Tournament Pass $500 in Prizes Fortnite, LoL, SSBU Si
+  gold=not     p_entail=0.004  See the intimate pictures Kelly released 4 you! Unlock below...htt
+  gold=not     p_entail=0.006  Lowe's retail company would like your help on this official questi
+  gold=not     p_entail=0.013  Happy new years melody!
+  gold=not     p_entail=0.018  Sorry, I'll came to ur place later..
+  gold=not     p_entail=0.010  What time you thinkin of goin?
+  gold=not     p_entail=0.016  Was doing my test earlier. I appreciate you. Will call you tomorro
+  gold=not     p_entail=0.082  Does cinema plus drink appeal tomo? * Is a fr thriller by director
+  gold=not     p_entail=0.004  I tagged MY friends that you seemed to count as YOUR friends.
+  gold=URGENT  p_entail=0.595  Hello which the site to download songs its urgent pls
+  gold=URGENT  p_entail=0.614  K.:)do it at evening da:)urgent:)

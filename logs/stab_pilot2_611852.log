@@ -1,0 +1,64 @@
+[data] 3000 explanation-template rows
+[eligible] 649 both-correct rationale pairs
+Loading weights:   0%|          | 0/389 [00:00<?, ?it/s]Loading weights:  16%|█▋        | 64/389 [00:00<00:00, 555.78it/s]Loading weights:  38%|███▊      | 148/389 [00:00<00:00, 689.09it/s]Loading weights:  68%|██████▊   | 264/389 [00:00<00:00, 883.71it/s]Loading weights: 100%|██████████| 389/389 [00:00<00:00, 975.99it/s]
+[transformers] [1mRobertaModel LOAD REPORT[0m from: roberta-large
+Key                       | Status     | 
+--------------------------+------------+-
+lm_head.bias              | UNEXPECTED | 
+lm_head.dense.weight      | UNEXPECTED | 
+lm_head.layer_norm.weight | UNEXPECTED | 
+lm_head.dense.bias        | UNEXPECTED | 
+lm_head.layer_norm.bias   | UNEXPECTED | 
+pooler.dense.bias         | MISSING    | 
+pooler.dense.weight       | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[bertscore] 649 pairs | roberta-large layer=17
+  [bertscore] embedded 64/649
+  [bertscore] embedded 64/649
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2009.18it/s]
+[sentcos] 649 pairs | sentence-transformers/all-MiniLM-L6-v2
+[write] outputs/stab_pilot2/explanation_stability.txt
+============================================================================================
+DIMENSION 2 - EXPLANATION STABILITY
+============================================================================================
+
+Textual similarity between the rationale on the CLEAN message and the rationale
+on the PERTURBED message. Computed ONLY on pairs the model classifies correctly
+in BOTH forms, which CONTROLS FOR prediction correctness.
+
+This measures STABILITY - not faithfulness, correctness, or grounding.
+A rationale can be perfectly stable and still be wrong.
+
+PRIMARY  : BERTScore F1 (semantic, paraphrase-robust)
+SECONDARY: ROUGE-L (ordered overlap); token-Jaccard (lexical set overlap)
+
+--------------------------------------------------------------------------------------------
+(A) ELIGIBILITY - pairs correctly classified in BOTH clean and perturbed form.
+    A model with a SMALL eligible set may look stable only because its eligible
+    cases are the easy ones. Read table (B) against this.
+--------------------------------------------------------------------------------------------
+model                        attack         eligible      total     rate
+Phi-4-mini-instruct          character           649        893    72.7%
+Phi-4-mini-instruct          ALL                 649        893    72.7%
+
+--------------------------------------------------------------------------------------------
+(B) STABILITY by model (pooled over templates and attacks)
+--------------------------------------------------------------------------------------------
+model                               n  BERTScore   SentCos   ROUGE-L   Jaccard
+Phi-4-mini-instruct               649      0.897     0.855     0.462     0.418
+
+--------------------------------------------------------------------------------------------
+(C) STABILITY by model x attack   (values = BERTScore F1)
+--------------------------------------------------------------------------------------------
+model                          character
+Phi-4-mini-instruct                0.897
+
+--------------------------------------------------------------------------------------------
+(D) STABILITY by model x template (does role framing shift the rationale?)
+--------------------------------------------------------------------------------------------
+model                           t3_neutral_explanation
+Phi-4-mini-instruct                              0.897
+

@@ -1,0 +1,6 @@
+[data] 18126 valid perturbed | 2107 unique clean msgs
+[plan] 1 models x 4 templates | batch_size=16
+[model] loading Qwen/Qwen3.5-4B
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  31%|███       | 131/426 [00:00<00:00, 1274.15it/s]Loading weights:  61%|██████▏   | 261/426 [00:00<00:00, 1285.91it/s]Loading weights:  92%|█████████▏| 390/426 [00:00<00:00, 1182.65it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 1257.05it/s]
+slurmstepd-gpunode011: error: *** JOB 611414 ON gpunode011 CANCELLED AT 2026-07-10T10:05:33 ***

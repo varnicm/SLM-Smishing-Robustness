@@ -1,0 +1,25 @@
+[load] 242796 explanation rows (t3/t4)
+[matched] both_correct=179910  empty_excluded=19586  no_partner_excluded=0  matched=160324
+Loading weights:   0%|          | 0/389 [00:00<?, ?it/s]Loading weights:   1%|          | 2/389 [00:00<00:30, 12.74it/s]Loading weights:  32%|███▏      | 123/389 [00:00<00:00, 404.52it/s]Loading weights: 100%|██████████| 389/389 [00:00<00:00, 1061.07it/s]
+[transformers] [1mRobertaModel LOAD REPORT[0m from: roberta-large
+Key                       | Status     | 
+--------------------------+------------+-
+lm_head.layer_norm.weight | UNEXPECTED | 
+lm_head.bias              | UNEXPECTED | 
+lm_head.dense.weight      | UNEXPECTED | 
+lm_head.dense.bias        | UNEXPECTED | 
+lm_head.layer_norm.bias   | UNEXPECTED | 
+pooler.dense.weight       | MISSING    | 
+pooler.dense.bias         | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1487.25it/s]
+Traceback (most recent call last):
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/analyze_explanation.py", line 382, in <module>
+    main()
+  File "/work/projects/phd-ssanjarip42/ssanjarip42/reasoning-robustness/scripts/analyze_explanation.py", line 298, in main
+    "n_matched_true": len(true_list),
+                          ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'true_list' where it is not associated with a value
