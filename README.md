@@ -1,7 +1,7 @@
 
 Code, data, and model outputs for the paper:
 
-> **On the Robustness of Small Language Models for Smishing Detection against
+> #On the Robustness of Small Language Models for Smishing Detection against
 > Text Perturbation Attacks**
 >
 > *Authors omitted for double-blind review.*
