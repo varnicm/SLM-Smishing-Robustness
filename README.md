@@ -152,8 +152,8 @@ decoding** (`do_sample=False`, `num_beams=1`):
 | Name in paper | Hugging Face repo ID |
 |---|---|
 | Gemma-4-E4B-it | `google/gemma-4-E4B-it` |
-| Qwen3.5-4B | `Qwen/Qwen3.5-4B` *(confirm exact ID)* |
-| Qwen3.5-9B | `Qwen/Qwen3.5-9B` *(confirm exact ID)* |
+| Qwen3.5-4B | `Qwen/Qwen3.5-4B` |
+| Qwen3.5-9B | `Qwen/Qwen3.5-9B` |
 | Llama-3.1-8B | `meta-llama/Llama-3.1-8B-Instruct` |
 | Llama-3.2-3B | `meta-llama/Llama-3.2-3B-Instruct` |
 | Phi-4-mini | `microsoft/Phi-4-mini-instruct` |
@@ -177,6 +177,4 @@ be dropped by paraphrasing — this affects only how an example displays, not an
 
 ---
 
-## License
 
-TODO: choose a license before submission (see `LICENSE`).
