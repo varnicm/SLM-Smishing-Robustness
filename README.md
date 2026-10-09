@@ -11,10 +11,8 @@ results, so reviewers can inspect and re-run everything.
 
 ## Accessing the repository
 
-**Anonymous review link:**
-`https://anonymous.4open.science/r/slm-smishing-robustness/`
 
-Anonymous GitHub does **not** support `git clone`. To get the files:
+
 
 - **Browse online:** open the link above and navigate the file tree in the browser.
 - **Download everything:** click the **"Download Repository"** button on the
